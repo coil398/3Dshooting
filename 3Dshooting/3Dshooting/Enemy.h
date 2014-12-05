@@ -14,6 +14,7 @@ public:
 	Enemy(float x, float y, float z,int hp);
 	~Enemy();
 	void Draw();
-	void Control();
+	void Move();
+	int GetModelHandle()override;
 };
 

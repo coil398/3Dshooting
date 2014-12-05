@@ -7,6 +7,7 @@
 #define SizeX 1280
 #define SizeY 960
 #define COLORBITNUM 16
+#include "Player.h"
 
 
 // プログラムは WinMain から始まります
@@ -29,15 +30,15 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	SetDrawScreen(DX_SCREEN_BACK); //ダブルバッファリングの準備
 
 	Game* game = new Game(); //ゲームクラスのインスタンスを作成
-	Enemy* enemy = new Enemy(640.0f, 480.0f, -700.0f, 100);
+	Player* player = new Player(640.0f, 420.0f, -700.0f, 100);
 	Fps *fps = new Fps();
 
 	while (ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0 && CheckKey::gpUpdateKey() == 0)
 	{
 
-		enemy->Control();
+		player->Move();
 
-		enemy->Draw();
+		player->Draw();
 
 		fps->Update();
 		fps->Draw();
@@ -46,7 +47,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	}
 
 	delete game;
-	delete enemy;
+	delete player;
 
 	DxLib_End();				// ＤＸライブラリ使用の終了処理
 

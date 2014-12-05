@@ -1,26 +1,33 @@
-﻿2014/12/05 22:56:54 にビルドを開始しました。
+﻿2014/12/06 0:10:51 にビルドを開始しました。
      1>ノード 2 上のプロジェクト "D:\3Dshooting\3Dshooting\3Dshooting\3Dshooting.vcxproj" (Build ターゲット)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ID:\lib /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Character.cpp Enemy.cpp Game.cpp Main.cpp Player.cpp
-         Enemy.cpp
-         Character.cpp
-     1>d:\3dshooting\3dshooting\3dshooting\character.cpp(23): error C2065: 'ModelHandle' : 定義されていない識別子です。
-     1>d:\3dshooting\3dshooting\3dshooting\character.cpp(23): error C2065: 'x' : 定義されていない識別子です。
-     1>d:\3dshooting\3dshooting\3dshooting\character.cpp(23): error C2065: 'y' : 定義されていない識別子です。
-     1>d:\3dshooting\3dshooting\3dshooting\character.cpp(23): error C2065: 'z' : 定義されていない識別子です。
-     1>d:\3dshooting\3dshooting\3dshooting\character.cpp(23): error C3861: 'MV1SetPosition': 識別子が見つかりませんでした
-     1>d:\3dshooting\3dshooting\3dshooting\character.cpp(23): error C3861: 'VGet': 識別子が見つかりませんでした
-     1>d:\3dshooting\3dshooting\3dshooting\character.cpp(25): error C2065: 'ModelHandle' : 定義されていない識別子です。
-     1>d:\3dshooting\3dshooting\3dshooting\character.cpp(25): error C3861: 'MV1DrawModel': 識別子が見つかりませんでした
-         コードを生成中...
-         コンパイル中...
-         Main.cpp
-         コードを生成中...
-         スキップ中... (関連する変更は検出されませんでした)
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ID:\lib /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Character.cpp Enemy.cpp Player.cpp
          Player.cpp
-         Game.cpp
+     1>d:\3dshooting\3dshooting\3dshooting\player.cpp(30): error C2065: 'y' : 定義されていない識別子です。
+     1>d:\3dshooting\3dshooting\3dshooting\player.cpp(31): error C2065: 'y' : 定義されていない識別子です。
+     1>d:\3dshooting\3dshooting\3dshooting\player.cpp(32): error C2065: 'x' : 定義されていない識別子です。
+     1>d:\3dshooting\3dshooting\3dshooting\player.cpp(33): error C2065: 'x' : 定義されていない識別子です。
+     1>d:\3dshooting\3dshooting\3dshooting\player.cpp(34): error C2065: 'z' : 定義されていない識別子です。
+     1>d:\3dshooting\3dshooting\3dshooting\player.cpp(35): error C2065: 'z' : 定義されていない識別子です。
+     1>d:\3dshooting\3dshooting\3dshooting\player.cpp(41): error C2065: 'x' : 定義されていない識別子です。
+     1>d:\3dshooting\3dshooting\3dshooting\player.cpp(41): error C2065: 'y' : 定義されていない識別子です。
+     1>d:\3dshooting\3dshooting\3dshooting\player.cpp(41): error C2065: 'z' : 定義されていない識別子です。
+     1>d:\3dshooting\3dshooting\3dshooting\player.cpp(41): error C2660: 'DxLib::MV1SetPosition' : 関数に 1 個の引数を指定できません。
+         Enemy.cpp
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.cpp(19): error C2065: 'y' : 定義されていない識別子です。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.cpp(20): error C2065: 'y' : 定義されていない識別子です。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.cpp(21): error C2065: 'x' : 定義されていない識別子です。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.cpp(22): error C2065: 'x' : 定義されていない識別子です。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.cpp(23): error C2065: 'z' : 定義されていない識別子です。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.cpp(24): error C2065: 'z' : 定義されていない識別子です。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.cpp(30): error C2065: 'x' : 定義されていない識別子です。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.cpp(30): error C2065: 'y' : 定義されていない識別子です。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.cpp(30): error C2065: 'z' : 定義されていない識別子です。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.cpp(30): error C2660: 'DxLib::MV1SetPosition' : 関数に 1 個の引数を指定できません。
+         Character.cpp
+         コードを生成中...
      1>プロジェクト "D:\3Dshooting\3Dshooting\3Dshooting\3Dshooting.vcxproj" (Build ターゲット) のビルドが終了しました -- 失敗。
 
 ビルドに失敗しました。
 
-経過時間 00:00:01.34
+経過時間 00:00:01.31

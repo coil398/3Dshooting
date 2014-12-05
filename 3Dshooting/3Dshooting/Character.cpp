@@ -3,9 +3,12 @@
 #include "DxLib.h"
 
 
-Character::Character(float x, float y, float z, int hp) :Vector3(x,y,z)
+Character::Character(float x, float y, float z, int hp)
 {
-	this->hp = hp;
+	vector.x = x;
+	vector.y = y;
+	vector.z = z;
+
 }
 
 
@@ -13,7 +16,7 @@ Character::~Character()
 {
 }
 
-void Character::AddVector(float x,float y,float z)
+void Character::AddVector()
 {
-	SetVector3(this->x + x, this->y + y, this->z + z);
+	
 }
