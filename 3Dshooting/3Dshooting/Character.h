@@ -14,6 +14,13 @@ public:
 	virtual int GetModelHandle()=0; //各キャラクタのモデルデータハンドル
 
 	//VECTOR型用の演算子オーバーロード
-	void AddVector(float );
+	VECTOR operator+(VECTOR v);
+	VECTOR operator-(VECTOR v);
+	void AddX(float x);
+	void AddY(float y);
+	void AddZ(float z);
+	float GetX();
+	float GetY();
+	float GetZ();
 };
 

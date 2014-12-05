@@ -27,18 +27,18 @@ void Player::Move()
 {
 	key = GetJoypadInputState(DX_INPUT_KEY_PAD1);
 
-	if (key & PAD_INPUT_DOWN) vector.y -= 1.0f;
-	if (key & PAD_INPUT_UP) y += 1.0f;
-	if (key & PAD_INPUT_LEFT) x -= 1.0f;
-	if (key & PAD_INPUT_RIGHT) x += 1.0f;
-	if (CheckKey::Key[KEY_INPUT_Z] >= 1) z += 1.0f;
-	if (CheckKey::Key[KEY_INPUT_X] >= 1) z -= 1.0f;
+	if (key & PAD_INPUT_DOWN) AddY(-1.0f);
+	if (key & PAD_INPUT_UP) AddY(1.0f);
+	if (key & PAD_INPUT_LEFT) AddX(-1.0f);
+	if (key & PAD_INPUT_RIGHT) AddX(1.0f);
+	if (CheckKey::Key[KEY_INPUT_Z] >= 1) AddZ(1.0f);
+	if (CheckKey::Key[KEY_INPUT_X] >= 1) AddZ(-1.0f);
 }
 
 void Player::Draw()
 {
 	//3Dƒ‚ƒfƒ‹‚ÌˆÚ“®
-	MV1SetPosition(GetModelHandle(), VGet(x, y, z));
+	MV1SetPosition(GetModelHandle(), VGet(GetX(), GetY(), GetZ()));
 	//3Dƒ‚ƒfƒ‹‚Ì•`‰æ
 	MV1DrawModel(GetModelHandle());
 }

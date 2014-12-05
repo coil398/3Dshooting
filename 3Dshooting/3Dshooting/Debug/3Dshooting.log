@@ -1,33 +1,24 @@
-﻿2014/12/06 0:10:51 にビルドを開始しました。
+﻿2014/12/06 2:23:24 にビルドを開始しました。
      1>ノード 2 上のプロジェクト "D:\3Dshooting\3Dshooting\3Dshooting\3Dshooting.vcxproj" (Build ターゲット)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ID:\lib /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Character.cpp Enemy.cpp Player.cpp
-         Player.cpp
-     1>d:\3dshooting\3dshooting\3dshooting\player.cpp(30): error C2065: 'y' : 定義されていない識別子です。
-     1>d:\3dshooting\3dshooting\3dshooting\player.cpp(31): error C2065: 'y' : 定義されていない識別子です。
-     1>d:\3dshooting\3dshooting\3dshooting\player.cpp(32): error C2065: 'x' : 定義されていない識別子です。
-     1>d:\3dshooting\3dshooting\3dshooting\player.cpp(33): error C2065: 'x' : 定義されていない識別子です。
-     1>d:\3dshooting\3dshooting\3dshooting\player.cpp(34): error C2065: 'z' : 定義されていない識別子です。
-     1>d:\3dshooting\3dshooting\3dshooting\player.cpp(35): error C2065: 'z' : 定義されていない識別子です。
-     1>d:\3dshooting\3dshooting\3dshooting\player.cpp(41): error C2065: 'x' : 定義されていない識別子です。
-     1>d:\3dshooting\3dshooting\3dshooting\player.cpp(41): error C2065: 'y' : 定義されていない識別子です。
-     1>d:\3dshooting\3dshooting\3dshooting\player.cpp(41): error C2065: 'z' : 定義されていない識別子です。
-     1>d:\3dshooting\3dshooting\3dshooting\player.cpp(41): error C2660: 'DxLib::MV1SetPosition' : 関数に 1 個の引数を指定できません。
-         Enemy.cpp
-     1>d:\3dshooting\3dshooting\3dshooting\enemy.cpp(19): error C2065: 'y' : 定義されていない識別子です。
-     1>d:\3dshooting\3dshooting\3dshooting\enemy.cpp(20): error C2065: 'y' : 定義されていない識別子です。
-     1>d:\3dshooting\3dshooting\3dshooting\enemy.cpp(21): error C2065: 'x' : 定義されていない識別子です。
-     1>d:\3dshooting\3dshooting\3dshooting\enemy.cpp(22): error C2065: 'x' : 定義されていない識別子です。
-     1>d:\3dshooting\3dshooting\3dshooting\enemy.cpp(23): error C2065: 'z' : 定義されていない識別子です。
-     1>d:\3dshooting\3dshooting\3dshooting\enemy.cpp(24): error C2065: 'z' : 定義されていない識別子です。
-     1>d:\3dshooting\3dshooting\3dshooting\enemy.cpp(30): error C2065: 'x' : 定義されていない識別子です。
-     1>d:\3dshooting\3dshooting\3dshooting\enemy.cpp(30): error C2065: 'y' : 定義されていない識別子です。
-     1>d:\3dshooting\3dshooting\3dshooting\enemy.cpp(30): error C2065: 'z' : 定義されていない識別子です。
-     1>d:\3dshooting\3dshooting\3dshooting\enemy.cpp(30): error C2660: 'DxLib::MV1SetPosition' : 関数に 1 個の引数を指定できません。
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ID:\lib /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Character.cpp
          Character.cpp
-         コードを生成中...
-     1>プロジェクト "D:\3Dshooting\3Dshooting\3Dshooting\3Dshooting.vcxproj" (Build ターゲット) のビルドが終了しました -- 失敗。
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\3Dshooting\3Dshooting\Debug\3Dshooting.exe" /INCREMENTAL /NOLOGO /LIBPATH:D:\lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\3Dshooting\3Dshooting\Debug\3Dshooting.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\3Dshooting\3Dshooting\Debug\3Dshooting.lib" /MACHINE:X86 Debug\BackGround.obj
+         Debug\Barrage.obj
+         Debug\Bullet.obj
+         Debug\Character.obj
+         Debug\CheckKey.obj
+         Debug\Enemy.obj
+         Debug\Fps.obj
+         Debug\Game.obj
+         Debug\IShot.obj
+         Debug\Main.obj
+         Debug\Player.obj
+         Debug\Vector3.obj
+         3Dshooting.vcxproj -> D:\3Dshooting\3Dshooting\Debug\3Dshooting.exe
+     1>プロジェクト "D:\3Dshooting\3Dshooting\3Dshooting\3Dshooting.vcxproj" (Build ターゲット) のビルドが完了しました。
 
-ビルドに失敗しました。
+ビルドに成功しました。
 
-経過時間 00:00:01.31
+経過時間 00:00:01.09

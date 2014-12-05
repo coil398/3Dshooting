@@ -15,6 +15,6 @@ public:
 	~Enemy();
 	void Draw();
 	void Move();
-	int GetModelHandle()override;
+	//int GetModelHandle()override;
 };
 
