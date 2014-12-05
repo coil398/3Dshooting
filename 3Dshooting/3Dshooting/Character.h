@@ -1,9 +1,13 @@
 #pragma once
+#include "vector3.h"
 
 class Character
 {
+private:
+	int hp;
+	Vector3* vector3;
 public:
-	Character(Vector2);
+	Character(float x,float y,float z,int hp);
 	~Character();
 };
 

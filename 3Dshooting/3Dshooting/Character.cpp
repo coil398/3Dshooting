@@ -1,9 +1,11 @@
 #include "Character.h"
-#include "Vector2.h"
+#include "Vector3.h"
 
 
-Character::Character()
+Character::Character(float x,float y,float z,int hp)
 {
+	this->hp = hp;
+	vector3->SetVector3(x, y, z);
 }
 
 
