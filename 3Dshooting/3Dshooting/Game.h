@@ -2,6 +2,8 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "Fps.h"
+#include "Camera.h"
+
 class Game
 {
 private:
@@ -9,6 +11,7 @@ private:
 	Player* player;
 	//Enemy* enemy;
 	Fps* fps;
+	Camera* camera;
 public:
 	Game();
 	~Game();

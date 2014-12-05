@@ -30,11 +30,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	Game* game = new Game(); //ゲームクラスのインスタンスを作成
 
+	//ゲーム内処理
 	while (ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0 && CheckKey::gpUpdateKey() == 0)
 	{
 		game->Run();
 	}
 
+	//gameクラスのメモリ解放
 	delete game;
 
 	DxLib_End();				// ＤＸライブラリ使用の終了処理
