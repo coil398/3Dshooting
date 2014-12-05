@@ -2,7 +2,7 @@
 // 
 // 		‚c‚wƒ‰ƒCƒuƒ‰ƒŠ		ƒwƒbƒ_ƒtƒ@ƒCƒ‹
 // 
-// 				Ver 3.12e
+// 				Ver 3.13b
 // 
 // -------------------------------------------------------------------------------
 
@@ -13,8 +13,8 @@
 #include "DxDirectX.h"
 
 // ‚c‚wƒ‰ƒCƒuƒ‰ƒŠ‚Ìƒo[ƒWƒ‡ƒ“
-#define DXLIB_VERSION 0x312e
-#define DXLIB_VERSION_STR _T( "3.12e" )
+#define DXLIB_VERSION 0x313b
+#define DXLIB_VERSION_STR _T( "3.13b" )
 
 // İ’è -----------------------------------------------------------------------
 
@@ -388,6 +388,8 @@
 #define DX_WINDOWSVERSION_VISTA						(0x108)
 #define DX_WINDOWSVERSION_7							(0x109)
 #define DX_WINDOWSVERSION_8							(0x10A)
+#define DX_WINDOWSVERSION_8_1						(0x10B)
+#define DX_WINDOWSVERSION_10						(0x10C)
 #define DX_WINDOWSVERSION_NT_TYPE					(0x100)
 
 // ‚c‚‰‚’‚…‚ƒ‚”‚w‚Ìƒo[ƒWƒ‡ƒ“ƒ}ƒNƒ
@@ -419,6 +421,7 @@
 #define DX_DRAWMODE_BILINEAR						(1)				// ƒoƒCƒŠƒjƒA–@‚Å•`‰æ‚·‚é
 #define DX_DRAWMODE_ANISOTROPIC						(2)				// ˆÙ•û«ƒtƒBƒ‹ƒ^ƒŠƒ“ƒO–@‚Å•`‰æ‚·‚é
 #define DX_DRAWMODE_OTHER							(3)				// ‚»‚êˆÈŠO
+#define DX_DRAWMODE_NUM								(4)				// •`‰æƒ‚[ƒh‚Ì”
 
 // ƒtƒHƒ“ƒg‚Ìƒ^ƒCƒv
 #define DX_FONTTYPE_NORMAL							(0x00)				// ƒm[ƒ}ƒ‹ƒtƒHƒ“ƒg
@@ -511,6 +514,7 @@
 #define DX_CULLING_NONE								(0)				// ƒJƒŠƒ“ƒO‚È‚µ
 #define DX_CULLING_LEFT								(1)				// ”w–Ê‚ğ¶‰ñ‚è‚ÅƒJƒŠƒ“ƒO
 #define DX_CULLING_RIGHT							(2)				// ”w–Ê‚ğ‰E‰ñ‚è‚ÅƒJƒŠƒ“ƒO
+#define DX_CULLING_NUM								(3)				// ƒJƒŠƒ“ƒOƒ‚[ƒh‚Ì”
 
 // ƒNƒŠƒbƒsƒ“ƒO•ûŒü
 #define DX_CAMERACLIP_LEFT							(0x01)			// ‰æ–Ê¶•ûŒü‚ÉƒNƒŠƒbƒv
@@ -698,10 +702,11 @@
 #define DX_MATERIAL_BLENDTYPE_NONE					(3)				// –³Œø
 
 // ƒeƒNƒXƒ`ƒƒƒAƒhƒŒƒXƒ^ƒCƒv
-#define DX_TEXADDRESS_WRAP							D_D3DTADDRESS_WRAP
-#define DX_TEXADDRESS_MIRROR						D_D3DTADDRESS_MIRROR
-#define DX_TEXADDRESS_CLAMP							D_D3DTADDRESS_CLAMP
-#define DX_TEXADDRESS_BORDER						D_D3DTADDRESS_BORDER
+#define DX_TEXADDRESS_WRAP							(1)				// D_D3DTADDRESS_WRAP
+#define DX_TEXADDRESS_MIRROR						(2)				// D_D3DTADDRESS_MIRROR
+#define DX_TEXADDRESS_CLAMP							(3)				// D_D3DTADDRESS_CLAMP
+#define DX_TEXADDRESS_BORDER						(4)				// D_D3DTADDRESS_BORDER
+#define DX_TEXADDRESS_NUM							(5)				// ƒeƒNƒXƒ`ƒƒƒAƒhƒŒƒXƒ^ƒCƒv‚Ì”
 
 // ’¸“_ƒf[ƒ^ƒ^ƒCƒv
 #define DX_VERTEX_TYPE_NORMAL_3D					(0)				// VERTEX3D\‘¢‘ÌŒ`®
@@ -946,34 +951,34 @@
 #define MOUSE_INPUT_8								(0x0080)			// ƒ}ƒEƒX‚Wƒ{ƒ^ƒ“
 
 // ƒL[’è‹`
-#define KEY_INPUT_BACK								D_DIK_BACK			// ƒoƒbƒNƒXƒy[ƒXƒL[
-#define KEY_INPUT_TAB								D_DIK_TAB			// ƒ^ƒuƒL[
-#define KEY_INPUT_RETURN							D_DIK_RETURN		// ƒGƒ“ƒ^[ƒL[
+#define KEY_INPUT_BACK								D_DIK_BACK			// BackSpaceƒL[
+#define KEY_INPUT_TAB								D_DIK_TAB			// TabƒL[
+#define KEY_INPUT_RETURN							D_DIK_RETURN		// EnterƒL[
 
-#define KEY_INPUT_LSHIFT							D_DIK_LSHIFT		// ¶ƒVƒtƒgƒL[
-#define KEY_INPUT_RSHIFT							D_DIK_RSHIFT		// ‰EƒVƒtƒgƒL[
-#define KEY_INPUT_LCONTROL							D_DIK_LCONTROL		// ¶ƒRƒ“ƒgƒ[ƒ‹ƒL[
-#define KEY_INPUT_RCONTROL							D_DIK_RCONTROL		// ‰EƒRƒ“ƒgƒ[ƒ‹ƒL[
-#define KEY_INPUT_ESCAPE							D_DIK_ESCAPE		// ƒGƒXƒP[ƒvƒL[
+#define KEY_INPUT_LSHIFT							D_DIK_LSHIFT		// ¶ShiftƒL[
+#define KEY_INPUT_RSHIFT							D_DIK_RSHIFT		// ‰EShiftƒL[
+#define KEY_INPUT_LCONTROL							D_DIK_LCONTROL		// ¶CtrlƒL[
+#define KEY_INPUT_RCONTROL							D_DIK_RCONTROL		// ‰ECtrlƒL[
+#define KEY_INPUT_ESCAPE							D_DIK_ESCAPE		// EscƒL[
 #define KEY_INPUT_SPACE								D_DIK_SPACE			// ƒXƒy[ƒXƒL[
-#define KEY_INPUT_PGUP								D_DIK_PGUP			// ‚o‚‚‡‚…‚t‚oƒL[
-#define KEY_INPUT_PGDN								D_DIK_PGDN			// ‚o‚‚‡‚…‚c‚‚—‚ƒL[
-#define KEY_INPUT_END								D_DIK_END			// ƒGƒ“ƒhƒL[
-#define KEY_INPUT_HOME								D_DIK_HOME			// ƒz[ƒ€ƒL[
+#define KEY_INPUT_PGUP								D_DIK_PGUP			// PageUpƒL[
+#define KEY_INPUT_PGDN								D_DIK_PGDN			// PageDownƒL[
+#define KEY_INPUT_END								D_DIK_END			// EndƒL[
+#define KEY_INPUT_HOME								D_DIK_HOME			// HomeƒL[
 #define KEY_INPUT_LEFT								D_DIK_LEFT			// ¶ƒL[
 #define KEY_INPUT_UP								D_DIK_UP			// ãƒL[
 #define KEY_INPUT_RIGHT								D_DIK_RIGHT			// ‰EƒL[
 #define KEY_INPUT_DOWN								D_DIK_DOWN			// ‰ºƒL[
-#define KEY_INPUT_INSERT							D_DIK_INSERT		// ƒCƒ“ƒT[ƒgƒL[
-#define KEY_INPUT_DELETE							D_DIK_DELETE		// ƒfƒŠ[ƒgƒL[
+#define KEY_INPUT_INSERT							D_DIK_INSERT		// InsertƒL[
+#define KEY_INPUT_DELETE							D_DIK_DELETE		// DeleteƒL[
 
 #define KEY_INPUT_MINUS								D_DIK_MINUS			// |ƒL[
 #define KEY_INPUT_YEN								D_DIK_YEN			// ƒL[
 #define KEY_INPUT_PREVTRACK							D_DIK_PREVTRACK		// OƒL[
 #define KEY_INPUT_PERIOD							D_DIK_PERIOD		// DƒL[
 #define KEY_INPUT_SLASH								D_DIK_SLASH			// ^ƒL[
-#define KEY_INPUT_LALT								D_DIK_LALT			// ¶‚`‚k‚sƒL[
-#define KEY_INPUT_RALT								D_DIK_RALT			// ‰E‚`‚k‚sƒL[
+#define KEY_INPUT_LALT								D_DIK_LALT			// ¶AltƒL[
+#define KEY_INPUT_RALT								D_DIK_RALT			// ‰EAltƒL[
 #define KEY_INPUT_SCROLL							D_DIK_SCROLL		// ScrollLockƒL[
 #define KEY_INPUT_SEMICOLON							D_DIK_SEMICOLON		// GƒL[
 #define KEY_INPUT_COLON								D_DIK_COLON			// FƒL[
@@ -990,10 +995,10 @@
 #define KEY_INPUT_CAPSLOCK							D_DIK_CAPSLOCK		// CaspLockƒL[
 #define KEY_INPUT_SYSRQ								D_DIK_SYSRQ			// PrintScreenƒL[
 #define KEY_INPUT_PAUSE								D_DIK_PAUSE			// PauseBreakƒL[
-#define KEY_INPUT_LWIN								D_DIK_LWIN			// ¶‚v‚‰‚ƒL[
-#define KEY_INPUT_RWIN								D_DIK_RWIN			// ‰E‚v‚‰‚ƒL[
+#define KEY_INPUT_LWIN								D_DIK_LWIN			// ¶WinƒL[
+#define KEY_INPUT_RWIN								D_DIK_RWIN			// ‰EWinƒL[
 
-#define KEY_INPUT_NUMLOCK							D_DIK_NUMLOCK		// ƒeƒ“ƒL[‚O
+#define KEY_INPUT_NUMLOCK							D_DIK_NUMLOCK		// ƒeƒ“ƒL[NumLockƒL[
 #define KEY_INPUT_NUMPAD0							D_DIK_NUMPAD0		// ƒeƒ“ƒL[‚O
 #define KEY_INPUT_NUMPAD1							D_DIK_NUMPAD1		// ƒeƒ“ƒL[‚P
 #define KEY_INPUT_NUMPAD2							D_DIK_NUMPAD2		// ƒeƒ“ƒL[‚Q
@@ -1111,6 +1116,10 @@
 #define DX_KEYINPSTRCOLOR_IME_MODE_STR					(21)			// ‚h‚l‚dg—p‚Ì“ü—Íƒ‚[ƒh•¶š—ñ‚ÌF(w‘SŠp‚Ğ‚ç‚ª‚Èx“™)
 #define DX_KEYINPSTRCOLOR_IME_MODE_STR_EDGE				(22)			// ‚h‚l‚dg—p‚Ì“ü—Íƒ‚[ƒh•¶š—ñ‚Ì‰‚ÌF
 #define DX_KEYINPSTRCOLOR_NUM							(23)
+
+// •¶š—ñ“ü—Íˆ—‚Ì“ü—Í•¶š”‚ªŒÀŠE‚É’B‚µ‚Ä‚¢‚éó‘Ô‚ÅA•¶š—ñ‚Ì––’[•”•ª‚Å“ü—Í‚ªs‚í‚ê‚½ê‡‚Ìˆ—ƒ‚[ƒh
+#define DX_KEYINPSTR_ENDCHARAMODE_OVERWRITE				(0)				// •¶š”‚ªŒÀŠE‚É’B‚µ‚Ä‚¢‚éó‘Ô‚Å•¶š—ñ‚Ì––’[‚Å•¶š‚ª“ü—Í‚³‚ê‚½ê‡‚ÍAÅŒã‚Ì•¶š‚ğã‘‚«( ƒfƒtƒHƒ‹ƒg )
+#define DX_KEYINPSTR_ENDCHARAMODE_NOTCHANGE				(1)				// •¶š”‚ªŒÀŠE‚É’B‚µ‚Ä‚¢‚éó‘Ô‚Å•¶š—ñ‚Ì––’[‚Å•¶š‚ª“ü—Í‚³‚ê‚½ê‡‚ÍA‰½‚à•Ï‰»‚µ‚È‚¢
 
 // ƒtƒ‹ƒXƒNƒŠ[ƒ“‰ğ‘œ“xƒ‚[ƒh’è‹`
 #define DX_FSRESOLUTIONMODE_NATIVE					(0)					// ƒ‚ƒjƒ^[‚Ì‰ğ‘œ“x‚ğ‚c‚wƒ‰ƒCƒuƒ‰ƒŠ‰æ–Ê‚Ì‰ğ‘œ“x‚É‡‚í‚¹‚éƒ‚[ƒh
@@ -1303,13 +1312,6 @@ typedef struct tagVERTEX
 	float					u, v ;
 	unsigned char			b, g, r, a ;
 } VERTEX ;
-
-// ‚R‚c•`‰æ‚Ég—p‚·‚é’¸“_ƒf[ƒ^Œ^( ƒeƒNƒXƒ`ƒƒ‚È‚µ )( ‹Œƒo[ƒWƒ‡ƒ“‚Ì‚à‚Ì )
-typedef struct tagVERTEX_NOTEX_3D
-{
-	VECTOR					pos ;
-	unsigned char			b, g, r, a ;
-} VERTEX_NOTEX_3D, *LPVERTEX_NOTEX_3D ;
 
 // ‚R‚c•`‰æ‚Ég—p‚·‚é’¸“_ƒf[ƒ^Œ^( ‹Œƒo[ƒWƒ‡ƒ“‚Ì‚à‚Ì )
 typedef struct tagVERTEX_3D
@@ -1858,7 +1860,7 @@ extern	int			GetWindowMinSizeFlag(			void ) ;												// ƒƒCƒ“ƒEƒCƒ“ƒhƒE‚ªÅ
 extern	int			GetActiveFlag(					void ) ;												// GetWindowActiveFlag ‚Ì•Ê–¼ŠÖ”
 extern	HWND		GetMainWindowHandle(			void ) ;												// ƒƒCƒ“ƒEƒCƒ“ƒhƒE‚ÌƒEƒCƒ“ƒhƒEƒnƒ“ƒhƒ‹‚ğæ“¾‚·‚é
 extern	int			GetWindowModeFlag(				void ) ;												// ƒEƒCƒ“ƒhƒEƒ‚[ƒh‚Å‹N“®‚µ‚Ä‚¢‚é‚©‚Ç‚¤‚©‚ğæ“¾‚·‚é( –ß‚è’l  TRUE:ƒEƒCƒ“ƒhƒEƒ‚[ƒh  FALSE:ƒtƒ‹ƒXƒNƒŠ[ƒ“ƒ‚[ƒh )
-extern	int			GetDefaultState(				int *SizeX , int *SizeY , int *ColorBitDepth ) ;		// ‹N“®‚ÌƒfƒXƒNƒgƒbƒv‚Ì‰æ–Êî•ñ‚ğæ“¾‚·‚é( SizeX:ƒfƒXƒNƒgƒbƒv‚Ì‰¡‰ğ‘œ“x‚ğŠi”[‚·‚é•Ï”‚Ìƒ|ƒCƒ“ƒ^  SizeY:c‰ğ‘œ“x‚ğŠi”[‚·‚é•Ï”‚Ìƒ|ƒCƒ“ƒ^  ColorBitDepth:‰æ–ÊƒJƒ‰[ƒrƒbƒg”‚ğŠi”[‚·‚é•Ï”‚Ìƒ|ƒCƒ“ƒ^ )
+extern	int			GetDefaultState(				int *SizeX , int *SizeY , int *ColorBitDepth, int *RefreshRate = NULL ) ;		// ‹N“®‚ÌƒfƒXƒNƒgƒbƒv‚Ì‰æ–Êî•ñ‚ğæ“¾‚·‚é( SizeX:ƒfƒXƒNƒgƒbƒv‚Ì‰¡‰ğ‘œ“x‚ğŠi”[‚·‚é•Ï”‚Ìƒ|ƒCƒ“ƒ^  SizeY:c‰ğ‘œ“x‚ğŠi”[‚·‚é•Ï”‚Ìƒ|ƒCƒ“ƒ^  ColorBitDepth:‰æ–ÊƒJƒ‰[ƒrƒbƒg”‚ğŠi”[‚·‚é•Ï”‚Ìƒ|ƒCƒ“ƒ^ )
 extern	int			GetNoActiveState(				int ResetFlag = TRUE ) ;								// ƒƒCƒ“ƒEƒCƒ“ƒhƒE‚ª”ñƒAƒNƒeƒBƒu‚É‚È‚èAˆ—‚ªˆê’â~‚µ‚Ä‚¢‚½‚©‚Ç‚¤‚©‚ğæ“¾‚·‚é(ˆø” ResetFlag=TRUE:ó‘Ô‚ğƒŠƒZƒbƒg FALSE:ó‘Ô‚ğƒŠƒZƒbƒg‚µ‚È‚¢    –ß‚è’l: 0=ˆê’â~‚Í‚µ‚Ä‚¢‚È‚¢  1=ˆê’â~‚µ‚Ä‚¢‚½ )
 extern	int			GetMouseDispFlag(				void ) ;												// ƒ}ƒEƒXƒ|ƒCƒ“ƒ^‚ğ•\¦‚·‚é‚©‚Ç‚¤‚©‚Ìİ’è‚ğæ“¾‚·‚é( –ß‚è’l  TRUE:•\¦‚·‚é  FALSE:•\¦‚µ‚È‚¢ )
 extern	int			GetAlwaysRunFlag(				void ) ;												// ƒƒCƒ“ƒEƒCƒ“ƒhƒE‚ª”ñƒAƒNƒeƒBƒu‚É‚È‚Á‚Ä‚àˆ—‚ğÀs‚µ‘±‚¯‚é‚©‚Ç‚¤‚©‚Ìİ’è‚ğæ“¾‚·‚é( TRUE:Às‚·‚é  FALSE:’â~‚·‚é )
@@ -1878,6 +1880,7 @@ extern	int			GetWindowUserCloseFlag(			int StateResetFlag = FALSE ) ;							// ƒ
 extern	int			GetNotDrawFlag(					void ) ;												// ‚c‚wƒ‰ƒCƒuƒ‰ƒŠ‚Ì•`‰æ‹@”\‚ğg‚¤‚©‚Ç‚¤‚©‚Ìİ’è‚ğæ“¾‚·‚é
 extern	int			GetPaintMessageFlag(			void ) ;												// WM_PAINT ƒƒbƒZ[ƒW‚ª—ˆ‚½‚©‚Ç‚¤‚©‚ğæ“¾‚·‚é(–ß‚è’l  TRUE:WM_PAINTƒƒbƒZ[ƒW‚ª—ˆ‚½(ˆê“xæ“¾‚·‚é‚ÆˆÈŒãAÄ‚Ñ WM_PAINTƒƒbƒZ[ƒW‚ª—ˆ‚é‚Ü‚Å FALSE ‚ª•Ô‚Á‚Ä‚­‚é‚æ‚¤‚É‚È‚é)  FALSE:WM_PAINT ƒƒbƒZ[ƒW‚Í—ˆ‚Ä‚¢‚È‚¢)
 extern	int			GetValidHiPerformanceCounter(	void ) ;												// ƒpƒtƒH[ƒ}ƒ“ƒXƒJƒEƒ“ƒ^‚ª—LŒø‚©‚Ç‚¤‚©‚ğæ“¾‚·‚é(–ß‚è’l  TRUE:—LŒø  FALSE:–³Œø)
+extern	TCHAR		GetInputSystemChar(				int DeleteFlag ) ;										// “ü—Í‚³‚ê‚½ƒVƒXƒeƒ€•¶š‚ğæ“¾‚·‚é
 
 // İ’èŒnŠÖ”
 extern	int			ChangeWindowMode(						int Flag ) ;																		// ƒEƒCƒ“ƒhƒEƒ‚[ƒh‚ğ•ÏX‚·‚é
@@ -2199,6 +2202,7 @@ extern	int			SetKeyInputStringColor(		ULONGLONG NmlStr, ULONGLONG NmlCur, ULONGL
 extern	int			SetKeyInputStringColor2(	int TargetColor /* DX_KEYINPSTRCOLOR_NORMAL_STR “™ */, int Color ) ;															// InputStringŠÖ”g—p‚Ì•¶š‚ÌŠeF‚ğ•ÏX‚·‚é
 extern	int			ResetKeyInputStringColor2(	int TargetColor /* DX_KEYINPSTRCOLOR_NORMAL_STR “™ */ ) ;																		// SetKeyInputStringColor2 ‚Åİ’è‚µ‚½F‚ğƒfƒtƒHƒ‹ƒg‚É–ß‚·
 extern	int			SetKeyInputStringFont(		int FontHandle ) ;																												// ƒL[“ü—Í•¶š—ñ•`‰æŠÖ˜A‚Åg—p‚·‚éƒtƒHƒ“ƒg‚Ìƒnƒ“ƒhƒ‹‚ğ•ÏX‚·‚é(-1‚ÅƒfƒtƒHƒ‹ƒg‚ÌƒtƒHƒ“ƒgƒnƒ“ƒhƒ‹)
+extern	int			SetKeyInputStringEndCharaMode( int EndCharaMode /* DX_KEYINPSTR_ENDCHARAMODE_OVERWRITE “™ */ ) ;															// ƒL[“ü—Í•¶š—ñˆ—‚Ì“ü—Í•¶š”‚ªŒÀŠE‚É’B‚µ‚Ä‚¢‚éó‘Ô‚ÅA•¶š—ñ‚Ì––’[•”•ª‚Å“ü—Í‚ªs‚í‚ê‚½ê‡‚Ìˆ—ƒ‚[ƒh‚ğ•ÏX‚·‚é
 extern	int			DrawKeyInputModeString(		int x, int y ) ;																												// “ü—Íƒ‚[ƒh•¶š—ñ‚ğ•`‰æ‚·‚é
 
 extern	int			InitKeyInput(				void ) ;																														// ƒL[“ü—Íƒf[ƒ^‰Šú‰»
@@ -2503,6 +2507,7 @@ extern	int			DrawCircle(     int x, int y, int r,                               
 extern	int			DrawOval(       int x, int y, int rx, int ry,                                   int Color, int FillFlag,        int LineThickness = 1 ) ;	// ‘È‰~‚ğ•`‰æ‚·‚é
 extern	int			DrawTriangle(   int x1, int y1, int x2, int y2, int x3, int y3,                 int Color, int FillFlag ) ;				// OŠpŒ`‚ğ•`‰æ‚·‚é
 extern	int			DrawQuadrangle( int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4, int Color, int FillFlag ) ;				// lŠpŒ`‚ğ•`‰æ‚·‚é
+extern	int			DrawRoundRect(	int x1, int y1, int x2, int y2, int rx, int ry,                 int Color, int FillFlag ) ;				// Šp‚ÌŠÛ‚¢lŠpŒ`‚ğ•`‰æ‚·‚é
 extern 	int			DrawPixel(      int x, int y,                                                   int Color ) ;							// “_‚ğ•`‰æ‚·‚é
 
 extern	int			Paint(			int x, int y, int FillColor, int BoundaryColor = -1 ) ;													// w’è“_‚©‚ç‹«ŠEF‚ª‚ ‚é‚Æ‚±‚ë‚Ü‚Å“h‚è‚Â‚Ô‚·(‹«ŠEF‚ğ -1 ‚É‚·‚é‚Æw’è“_‚ÌF‚Ì—Ìˆæ‚ğ“h‚è‚Â‚Ô‚·)
@@ -2567,6 +2572,9 @@ extern	int			DrawRotaGraph3ToZBuffer(  int x, int y, int cx, int cy, double ExtR
 extern	int			DrawModiGraphToZBuffer(   int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4,               int GrHandle, int WriteZMode /* DX_ZWRITE_MASK “™ */ ) ;							// ‚yƒoƒbƒtƒ@‚É‘Î‚µ‚Ä‰æ‘œ‚Ì©—R•ÏŒ`•`‰æ
 extern	int			DrawBoxToZBuffer(         int x1, int y1, int x2, int y2,                                               int FillFlag, int WriteZMode /* DX_ZWRITE_MASK “™ */ ) ;							// ‚yƒoƒbƒtƒ@‚É‘Î‚µ‚Ä‹éŒ`‚Ì•`‰æ
 extern	int			DrawCircleToZBuffer(      int x, int y, int r,                                                          int FillFlag, int WriteZMode /* DX_ZWRITE_MASK “™ */ ) ;							// ‚yƒoƒbƒtƒ@‚É‘Î‚µ‚Ä‰~‚Ì•`‰æ
+extern	int			DrawTriangleToZBuffer(    int x1, int y1, int x2, int y2, int x3, int y3,                               int FillFlag, int WriteZMode /* DX_ZWRITE_MASK “™ */ ) ;							// ‚yƒoƒbƒtƒ@‚É‘Î‚µ‚ÄOŠpŒ`‚ğ•`‰æ‚·‚é
+extern	int			DrawQuadrangleToZBuffer(  int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4,               int FillFlag, int WriteZMode /* DX_ZWRITE_MASK “™ */ ) ;							// ‚yƒoƒbƒtƒ@‚É‘Î‚µ‚ÄlŠpŒ`‚ğ•`‰æ‚·‚é
+extern	int			DrawRoundRectToZBuffer(   int x1, int y1, int x2, int y2, int rx, int ry,                               int FillFlag, int WriteZMode /* DX_ZWRITE_MASK “™ */ ) ;							// ‚yƒoƒbƒtƒ@‚É‘Î‚µ‚ÄŠp‚ÌŠÛ‚¢lŠpŒ`‚ğ•`‰æ‚·‚é
 
 extern	int			DrawPolygon(                             const VERTEX    *Vertex, int PolygonNum,                                                                                                    int GrHandle, int TransFlag, int UVScaling = FALSE ) ;		// ‚Q‚cƒ|ƒŠƒSƒ“‚ğ•`‰æ‚·‚é( Vertex:OŠpŒ`‚ğŒ`¬‚·‚é’¸“_”z—ñ‚Ìæ“ªƒAƒhƒŒƒX( ’¸“_‚Ì”‚Íƒ|ƒŠƒSƒ“‚Ì”~‚R )  PolygonNum:•`‰æ‚·‚éƒ|ƒŠƒSƒ“‚Ì”  GrHandle:g—p‚·‚éƒOƒ‰ƒtƒBƒbƒNƒnƒ“ƒhƒ‹  TransFlag:“§‰ßFˆ—‚ğs‚¤‚©‚Ç‚¤‚©( TRUE:s‚¤  FALSE:s‚í‚È‚¢ )  UVScaling:Šî–{FALSE‚ÅOK )
 extern	int			DrawPolygon2D(                           const VERTEX2D  *Vertex, int PolygonNum,                                                                                                    int GrHandle, int TransFlag ) ;							// ‚Q‚cƒ|ƒŠƒSƒ“‚ğ•`‰æ‚·‚é
@@ -2688,6 +2696,7 @@ extern	int				SetDrawZBuffer(								int DrawScreen ) ;																// •`‰ææ
 #ifdef __WINDOWS__
 extern	int				BltBackScreenToWindow(						HWND Window, int ClientX, int ClientY ) ;										// — ‰æ–Ê‚Ì“à—e‚ğw’è‚ÌƒEƒCƒ“ƒhƒE‚É“]‘—‚·‚é
 extern	int				BltRectBackScreenToWindow(					HWND Window, RECT BackScreenRect, RECT WindowClientRect ) ;						// — ‰æ–Ê‚Ìw’è‚Ì—Ìˆæ‚ğƒEƒCƒ“ƒhƒE‚ÌƒNƒ‰ƒCƒAƒ“ƒg—Ìˆæ‚Ìw’è‚Ì—Ìˆæ‚É“]‘—‚·‚é
+extern	int				SetScreenFlipTargetWindow(					HWND TargetWindow ) ;															// ScreenFlip ‚Å‰æ‘œ‚ğ“]‘—‚·‚éæ‚ÌƒEƒCƒ“ƒhƒE‚ğİ’è‚·‚é( NULL ‚ğw’è‚·‚é‚Æİ’è‰ğœ )
 #endif // __WINDOWS__
 extern	int				SetGraphMode(								int ScreenSizeX, int ScreenSizeY, int ColorBitDepth, int RefreshRate = 60 ) ;	// ‰æ–Êƒ‚[ƒh‚ğİ’è‚·‚é
 extern	int				SetFullScreenResolutionMode(				int ResolutionMode /* DX_FSRESOLUTIONMODE_NATIVE “™ */ ) ;						// ƒtƒ‹ƒXƒNƒŠ[ƒ“‰ğ‘œ“xƒ‚[ƒh‚ğİ’è‚·‚é
@@ -2895,6 +2904,7 @@ extern 	int			PlayMovieToGraph(					int GraphHandle, int PlayType = DX_PLAYTYPE_
 extern 	int			PauseMovieToGraph(					int GraphHandle, int SysPause = 0 ) ;									// “®‰æƒtƒ@ƒCƒ‹‚ğg—p‚·‚éƒOƒ‰ƒtƒBƒbƒNƒnƒ“ƒhƒ‹‚Ì“®‰æƒtƒ@ƒCƒ‹‚ÌÄ¶‚ğ’â~‚·‚é
 extern	int			AddMovieFrameToGraph(				int GraphHandle, unsigned int FrameNum ) ;								// “®‰æƒtƒ@ƒCƒ‹‚ÌÄ¶ƒtƒŒ[ƒ€‚ği‚ß‚éA–ß‚·‚±‚Æ‚Ío—ˆ‚È‚¢( “®‰æƒtƒ@ƒCƒ‹‚ª’â~ó‘Ô‚ÅAŠ‚Â Ogg Theora ‚Ì‚İ—LŒø )
 extern	int			SeekMovieToGraph(					int GraphHandle, int Time ) ;											// “®‰æƒtƒ@ƒCƒ‹‚ÌÄ¶ˆÊ’u‚ğİ’è‚·‚é(ƒ~ƒŠ•b’PˆÊ)
+extern	int			SetPlaySpeedRateMovieToGraph(		int GraphHandle, double SpeedRate ) ;									// “®‰æƒtƒ@ƒCƒ‹‚ÌÄ¶‘¬“x‚ğİ’è‚·‚é( 1.0 = “™”{‘¬  2.0 = ‚Q”{‘¬ )Aˆê•”‚Ìƒtƒ@ƒCƒ‹ƒtƒH[ƒ}ƒbƒg‚Ì‚İ‚Å—LŒø‚È‹@”\‚Å‚·
 extern 	int			GetMovieStateToGraph(				int GraphHandle ) ;														// “®‰æƒtƒ@ƒCƒ‹‚ÌÄ¶ó‘Ô‚ğ“¾‚é
 extern	int			SetMovieVolumeToGraph(				int Volume, int GraphHandle ) ;											// “®‰æƒtƒ@ƒCƒ‹‚Ì‰¹—Ê‚ğİ’è‚·‚é(0`10000)
 extern	int			ChangeMovieVolumeToGraph(			int Volume, int GraphHandle ) ;											// “®‰æƒtƒ@ƒCƒ‹‚Ì‰¹—Ê‚ğİ’è‚·‚é(0`255)
@@ -3959,6 +3969,7 @@ extern	int			MV1SetLoadModelUsePhysicsMode(		int PhysicsMode /* DX_LOADMODEL_PHY
 extern	int			MV1SetLoadModelPhysicsWorldGravity( float Gravity ) ;													// “Ç‚İ‚Şƒ‚ƒfƒ‹‚Ì•¨—‰‰Z‚É“K—p‚·‚éd—Íƒpƒ‰ƒ[ƒ^‚ğİ’è‚·‚é
 extern	int			MV1SetLoadCalcPhysicsWorldGravity(	int GravityNo, VECTOR Gravity ) ;									// “Ç‚İ‚Şƒ‚ƒfƒ‹‚Ì•¨—‰‰Zƒ‚[ƒh‚ª–‘OŒvZ( DX_LOADMODEL_PHYSICS_LOADCALC )‚¾‚Á‚½ê‡‚É“K—p‚³‚ê‚éd—Í‚Ìİ’è‚ğ‚·‚é
 extern	int			MV1SetLoadModelAnimFilePath(		const TCHAR *FileName ) ;											// “Ç‚İ‚Şƒ‚ƒfƒ‹‚É“K—p‚·‚éƒAƒjƒ[ƒVƒ‡ƒ“ƒtƒ@ƒCƒ‹‚ÌƒpƒX‚ğİ’è‚·‚éANULL‚ğ“n‚·‚Æİ’èƒŠƒZƒbƒg( Œ»İ‚Í PMD,PMX ‚Ì‚İ‚ÉŒø‰Ê‚ ‚è )
+extern	int			MV1SetLoadModelUsePackDraw(			int Flag ) ;														// “Ç‚İ‚Şƒ‚ƒfƒ‹‚ğ“¯•¡”•`‰æ‚É‘Î‰‚³‚¹‚é‚©‚Ç‚¤‚©‚ğİ’è‚·‚é( TRUE:‘Î‰‚³‚¹‚é  FALSE:‘Î‰‚³‚¹‚È‚¢( ƒfƒtƒHƒ‹ƒg ) )A( u‘Î‰‚³‚¹‚év‚É‚·‚é‚Æ•`‰æ‚ª‚‘¬‚É‚È‚é‰Â”\«‚ª‚ ‚é‘ã‚í‚è‚ÉÁ”ïVRAM‚ª‘‚¦‚Ü‚· )
 
 // ƒ‚ƒfƒ‹•Û‘¶ŠÖŒW
 extern	int			MV1SaveModelToMV1File( int MHandle, const TCHAR *FileName, int SaveType = MV1_SAVETYPE_NORMAL , int AnimMHandle = -1 , int AnimNameCheck = TRUE , int Normal8BitFlag = 1 , int Position16BitFlag = 1 , int Weight8BitFlag = 0 , int Anim16BitFlag = 1 ) ;		// w’è‚ÌƒpƒX‚Éƒ‚ƒfƒ‹‚ğ•Û‘¶‚·‚é( –ß‚è’l  0:¬Œ÷  -1:ƒƒ‚ƒŠ•s‘«  -2:g‚í‚ê‚Ä‚¢‚È‚¢ƒAƒjƒ[ƒVƒ‡ƒ“‚ª‚ ‚Á‚½ )

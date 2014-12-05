@@ -2,7 +2,7 @@
 //
 //		ＤＸライブラリ		DirectX 関連定義用ヘッダファイル
 //
-//				Ver 3.12e
+//				Ver 3.13b
 //
 // ----------------------------------------------------------------------------
 
@@ -2039,11 +2039,31 @@ public :
 #define D_DXGI_USAGE_UNORDERED_ACCESS			( 1L << (6 + 4) )
 typedef UINT D_DXGI_USAGE ;
 
+#define	D_D3D11_SIMULTANEOUS_RENDER_TARGET_COUNT	( 8 )
+#define D_D3D11_FLOAT32_MAX						( 3.402823466e+38f )
+
+#define	D3D11_DEFAULT_STENCIL_READ_MASK			( 0xff )
+#define	D3D11_DEFAULT_STENCIL_WRITE_MASK		( 0xff )
+
+typedef enum tagD_DXGI_SWAP_CHAIN_FLAG
+{
+	D_DXGI_SWAP_CHAIN_FLAG_NONPREROTATED		= 1,
+	D_DXGI_SWAP_CHAIN_FLAG_ALLOW_MODE_SWITCH	= 2,
+	D_DXGI_SWAP_CHAIN_FLAG_GDI_COMPATIBLE		= 4,
+} D_DXGI_SWAP_CHAIN_FLAG ;
+
 typedef enum tagD_DXGI_SWAP_EFFECT
 {
 	D_DXGI_SWAP_EFFECT_DISCARD					= 0,
 	D_DXGI_SWAP_EFFECT_SEQUENTIAL				= 1
 } D_DXGI_SWAP_EFFECT;
+
+typedef enum tagD_DXGI_RESIDENCY
+{
+	D_DXGI_RESIDENCY_FULLY_RESIDENT				= 1,
+	D_DXGI_RESIDENCY_RESIDENT_IN_SHARED_MEMORY	= 2,
+	D_DXGI_RESIDENCY_EVICTED_TO_DISK				= 3
+} D_DXGI_RESIDENCY;
 
 typedef enum tagD_DXGI_MODE_SCANLINE_ORDER
 {
@@ -2190,6 +2210,8 @@ typedef enum tagD_DXGI_FORMAT
 	D_DXGI_FORMAT_FORCE_UINT					= 0xffffffff
 } D_DXGI_FORMAT ;
 
+#define	D_D3D11_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT				(14)
+
 typedef enum tagD_D3D_DRIVER_TYPE
 {
 	D_D3D_DRIVER_TYPE_UNKNOWN					= 0,
@@ -2210,6 +2232,43 @@ typedef enum tagD_D3D_FEATURE_LEVEL
 	D_D3D_FEATURE_LEVEL_11_0					= 0xb000,
 	D_D3D_FEATURE_LEVEL_11_1					= 0xb100
 } D_D3D_FEATURE_LEVEL ;
+
+typedef enum tagD_D3D11_FORMAT_SUPPORT
+{
+	D_D3D11_FORMAT_SUPPORT_BUFFER				= 0x1,
+	D_D3D11_FORMAT_SUPPORT_IA_VERTEX_BUFFER		= 0x2,
+	D_D3D11_FORMAT_SUPPORT_IA_INDEX_BUFFER		= 0x4,
+	D_D3D11_FORMAT_SUPPORT_SO_BUFFER			= 0x8,
+	D_D3D11_FORMAT_SUPPORT_TEXTURE1D			= 0x10,
+	D_D3D11_FORMAT_SUPPORT_TEXTURE2D			= 0x20,
+	D_D3D11_FORMAT_SUPPORT_TEXTURE3D			= 0x40,
+	D_D3D11_FORMAT_SUPPORT_TEXTURECUBE			= 0x80,
+	D_D3D11_FORMAT_SUPPORT_SHADER_LOAD			= 0x100,
+	D_D3D11_FORMAT_SUPPORT_SHADER_SAMPLE		= 0x200,
+	D_D3D11_FORMAT_SUPPORT_SHADER_SAMPLE_COMPARISON = 0x400,
+	D_D3D11_FORMAT_SUPPORT_SHADER_SAMPLE_MONO_TEXT = 0x800,
+	D_D3D11_FORMAT_SUPPORT_MIP					= 0x1000,
+	D_D3D11_FORMAT_SUPPORT_MIP_AUTOGEN			= 0x2000,
+	D_D3D11_FORMAT_SUPPORT_RENDER_TARGET		= 0x4000,
+	D_D3D11_FORMAT_SUPPORT_BLENDABLE			= 0x8000,
+	D_D3D11_FORMAT_SUPPORT_DEPTH_STENCIL		= 0x10000,
+	D_D3D11_FORMAT_SUPPORT_CPU_LOCKABLE			= 0x20000,
+	D_D3D11_FORMAT_SUPPORT_MULTISAMPLE_RESOLVE	= 0x40000,
+	D_D3D11_FORMAT_SUPPORT_DISPLAY				= 0x80000,
+	D_D3D11_FORMAT_SUPPORT_CAST_WITHIN_BIT_LAYOUT = 0x100000,
+	D_D3D11_FORMAT_SUPPORT_MULTISAMPLE_RENDERTARGET = 0x200000,
+	D_D3D11_FORMAT_SUPPORT_MULTISAMPLE_LOAD		= 0x400000,
+	D_D3D11_FORMAT_SUPPORT_SHADER_GATHER		= 0x800000,
+	D_D3D11_FORMAT_SUPPORT_BACK_BUFFER_CAST		= 0x1000000,
+	D_D3D11_FORMAT_SUPPORT_TYPED_UNORDERED_ACCESS_VIEW = 0x2000000,
+	D_D3D11_FORMAT_SUPPORT_SHADER_GATHER_COMPARISON = 0x4000000,
+} D_D3D11_FORMAT_SUPPORT;
+
+typedef enum tagD_D3D11_CPU_ACCESS_FLAG
+{
+	D_D3D11_CPU_ACCESS_WRITE					= 0x10000L,
+	D_D3D11_CPU_ACCESS_READ						= 0x20000L
+} D_D3D11_CPU_ACCESS_FLAG ;
 
 typedef enum tagD_D3D11_RESOURCE_DIMENSION
 {
@@ -2279,6 +2338,18 @@ typedef enum tagD_D3D11_USAGE
 	D_D3D11_USAGE_STAGING						= 3
 } D_D3D11_USAGE ;
 
+typedef enum tagD_D3D11_BIND_FLAG
+{
+	D_D3D11_BIND_VERTEX_BUFFER					= 0x1L,
+	D_D3D11_BIND_INDEX_BUFFER					= 0x2L,
+	D_D3D11_BIND_CONSTANT_BUFFER				= 0x4L,
+	D_D3D11_BIND_SHADER_RESOURCE				= 0x8L,
+	D_D3D11_BIND_STREAM_OUTPUT					= 0x10L,
+	D_D3D11_BIND_RENDER_TARGET					= 0x20L,
+	D_D3D11_BIND_DEPTH_STENCIL					= 0x40L,
+	D_D3D11_BIND_UNORDERED_ACCESS				= 0x80L
+} D_D3D11_BIND_FLAG ;
+
 typedef enum tagD_D3D11_INPUT_CLASSIFICATION
 {
 	D_D3D11_INPUT_PER_VERTEX_DATA				= 0,
@@ -2298,6 +2369,15 @@ typedef enum tagD_D3D11_DEVICE_CONTEXT_TYPE
 	D_D3D11_DEVICE_CONTEXT_IMMEDIATE			= 0,
 	D_D3D11_DEVICE_CONTEXT_DEFERRED				= ( D_D3D11_DEVICE_CONTEXT_IMMEDIATE + 1 ) 
 } D_D3D11_DEVICE_CONTEXT_TYPE;
+
+typedef enum tagD_D3D11_CREATE_DEVICE_FLAG
+{
+	D_D3D11_CREATE_DEVICE_SINGLETHREADED		= 0x1,
+	D_D3D11_CREATE_DEVICE_DEBUG					= 0x2,
+	D_D3D11_CREATE_DEVICE_SWITCH_TO_REF			= 0x4,
+	D_D3D11_CREATE_DEVICE_PREVENT_INTERNAL_THREADING_OPTIMIZATIONS = 0x8,
+	D_D3D11_CREATE_DEVICE_BGRA_SUPPORT			= 0x20,
+} D_D3D11_CREATE_DEVICE_FLAG ;
 
 typedef enum tagD_D3D11_BLEND
 {
@@ -2514,6 +2594,12 @@ typedef enum tagD_D3D11_QUERY_MISC_FLAG
 	D_D3D11_QUERY_MISC_PREDICATEHINT			= 0x1
 } D_D3D11_QUERY_MISC_FLAG ;
 
+typedef enum tagD_D3D11_CLEAR_FLAG
+{
+	D_D3D11_CLEAR_DEPTH							= 0x1,
+	D_D3D11_CLEAR_STENCIL						= 0x2
+} D_D3D11_CLEAR_FLAG ;
+
 typedef enum tagD_D3D11_COUNTER
 {
 	D_D3D11_COUNTER_DEVICE_DEPENDENT_0			= 0x40000000
@@ -2710,6 +2796,10 @@ typedef struct tagD_DXGI_SURFACE_DESC
 	D_DXGI_SAMPLE_DESC							SampleDesc ;
 } D_DXGI_SURFACE_DESC ;
 
+typedef struct tagD_DXGI_SHARED_RESOURCE
+{
+	HANDLE										Handle;
+} D_DXGI_SHARED_RESOURCE;
 
 typedef struct tagD_D3D11_TEXTURE1D_DESC
 {
@@ -3166,8 +3256,14 @@ typedef struct D_D3D11_COUNTER_INFO
 
 
 
+
+
+
+
 class D_ID3D11Device ;
 class D_ID3D11ClassLinkage ;
+class D_IDXGIAdapter ;
+class D_IDXGISurface ;
 
 class D_IDXGIObject : public IUnknown
 {
@@ -3176,6 +3272,23 @@ public:
 	virtual HRESULT __stdcall SetPrivateDataInterface	( REFGUID Name, const IUnknown *pUnknown ) = 0 ;
 	virtual HRESULT __stdcall GetPrivateData			( REFGUID Name, UINT *pDataSize, void *pData ) = 0 ;
 	virtual HRESULT __stdcall GetParent					( REFIID riid, void **ppParent ) = 0 ;
+};
+
+class D_IDXGIDevice : public D_IDXGIObject
+{
+public:
+	virtual HRESULT __stdcall GetAdapter				( D_IDXGIAdapter **pAdapter) = 0 ;
+	virtual HRESULT __stdcall CreateSurface				( const D_DXGI_SURFACE_DESC *pDesc, UINT NumSurfaces, D_DXGI_USAGE Usage, const D_DXGI_SHARED_RESOURCE *pSharedResource, D_IDXGISurface **ppSurface ) = 0 ;
+	virtual HRESULT __stdcall QueryResourceResidency	( IUnknown *const *ppResources, D_DXGI_RESIDENCY *pResidencyStatus, UINT NumResources ) = 0 ;
+	virtual HRESULT __stdcall SetGPUThreadPriority		( INT Priority ) = 0 ;
+	virtual HRESULT __stdcall GetGPUThreadPriority		( INT *pPriority ) = 0 ;
+};
+
+class D_IDXGIDevice1 : public D_IDXGIDevice
+{
+public:
+	virtual HRESULT __stdcall SetMaximumFrameLatency	( UINT MaxLatency ) = 0 ;
+	virtual HRESULT __stdcall GetMaximumFrameLatency	( UINT *pMaxLatency ) = 0 ;
 };
 
 class D_IDXGIDeviceSubObject : public D_IDXGIObject
@@ -3230,6 +3343,16 @@ public:
 	virtual HRESULT __stdcall GetContainingOutput		( D_IDXGIOutput **ppOutput ) = 0 ;
 	virtual HRESULT __stdcall GetFrameStatistics		( D_DXGI_FRAME_STATISTICS *pStats ) = 0 ;
 	virtual HRESULT __stdcall GetLastPresentCount		( UINT *pLastPresentCount ) = 0 ;
+};
+
+class D_IDXGIFactory : public D_IDXGIObject
+{
+public:
+	virtual HRESULT __stdcall EnumAdapters				( UINT Adapter, D_IDXGIAdapter **ppAdapter ) = 0 ;
+	virtual HRESULT __stdcall MakeWindowAssociation		( HWND WindowHandle, UINT Flags ) = 0 ;
+	virtual HRESULT __stdcall GetWindowAssociation		( HWND *pWindowHandle ) = 0 ;
+	virtual HRESULT __stdcall CreateSwapChain			( IUnknown *pDevice, D_DXGI_SWAP_CHAIN_DESC *pDesc, D_IDXGISwapChain **ppSwapChain ) = 0 ;
+	virtual HRESULT __stdcall CreateSoftwareAdapter		( HMODULE Module, D_IDXGIAdapter **ppAdapter ) = 0 ;
 };
 
 class D_ID3D11DeviceChild : public IUnknown
@@ -3566,6 +3689,22 @@ public:
 	virtual HRESULT __stdcall SetExceptionMode			( UINT RaiseFlags ) = 0 ;
 	virtual UINT	__stdcall GetExceptionMode			( void ) = 0 ;
 };
+
+typedef HRESULT ( WINAPI * LPD_CREATEDXGIFACTORY  )( REFIID riid, void **ppFactory ) ;
+typedef HRESULT ( WINAPI * LPD_CREATEDXGIFACTORY1 )( REFIID riid, void **ppFactory ) ;
+
+typedef HRESULT ( WINAPI * LPD_D3D11CREATEDEVICE )(
+	D_IDXGIAdapter                *  pAdapter,
+	D_D3D_DRIVER_TYPE                DriverType,
+	HMODULE                          Software,
+	UINT                             Flags,
+	CONST D_D3D_FEATURE_LEVEL     *  pFeatureLevels,
+	UINT                             FeatureLevels,
+	UINT                             SDKVersion,
+	D_ID3D11Device                ** ppDevice,
+	D_D3D_FEATURE_LEVEL           *  pFeatureLevel,
+	D_ID3D11DeviceContext         ** ppImmediateContext
+) ;
 
 typedef HRESULT ( CALLBACK *LPD_D3D11CREATEDEVICEANDSWAPCHAIN )( 
 	D_IDXGIAdapter                *  pAdapter,

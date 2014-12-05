@@ -2,7 +2,7 @@
 //
 //		ＤＸライブラリ　コンパイルコンフィグヘッダファイル
 //
-//				Ver 3.12e
+//				Ver 3.13b
 //
 // ----------------------------------------------------------------------------
 
@@ -36,7 +36,7 @@
 #define DX_THREAD_SAFE_NETWORK_ONLY
 
 // ＤＸアーカイブがいらない方は次のコメントを外してください
-// ( ＤＸアーカイブを無効にすると、ＤＸアーカイブを内部で使っている関係上 DX_NON_MODEL と DX_NON_FILTER も有効になります )
+// ( ＤＸアーカイブを無効にすると、ＤＸアーカイブを内部で使っている関係上 DX_NON_MODEL と DX_NON_FILTER と DX_NON_NORMAL_DRAW_SHADER も有効になります )
 //#define DX_NON_DXA
 
 // ムービー機能がいらない方は次のコメントを外してください
@@ -59,6 +59,9 @@
 
 // GraphFilter や GraphBlend を使用しない方は次のコメントを外して下さい
 //#define DX_NON_FILTER
+
+// 通常描画にプログラマブルシェーダーを使用しない方は次のコメントを外してください
+//#define DX_NON_NORMAL_DRAW_SHADER
 
 // ソフトウエア２Ｄ描画がいらない方は次のコメントを外してください
 //#define DX_NON_2DDRAW
@@ -146,6 +149,9 @@
 // 各ハンドルのエラーチェックを無効にする場合は次のコメントを外してください( 若干高速化される代わりに無効なハンドルを関数に渡すと即不正なメモリアクセスエラーが発生するようになります )
 //#define DX_NON_HANDLE_ERROR_CHECK
 
+// Direct3D11 を使用しない場合は以下のコメントを外してください( 現在開発中なので、必ずコメントを外した状態にしてください )
+#define DX_NON_DIRECT3D11
+
 // 軽量バージョンのＤＸライブラリを生成する場合は次のコメントを外してください
 //#define DX_LIB_LITEVER
 
@@ -186,6 +192,9 @@
 
 
 #ifdef DX_NON_DXA
+	#ifndef DX_NON_NORMAL_DRAW_SHADER
+		#define DX_NON_NORMAL_DRAW_SHADER
+	#endif
 	#ifndef DX_NON_MODEL
 		#define DX_NON_MODEL
 	#endif
