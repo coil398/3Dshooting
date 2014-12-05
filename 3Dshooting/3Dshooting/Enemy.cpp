@@ -29,6 +29,6 @@ void Enemy::Control()
 	if (key & PAD_INPUT_UP) y += 1.0f;
 	if (key & PAD_INPUT_LEFT) x -= 1.0f;
 	if (key & PAD_INPUT_RIGHT) x += 1.0f;
-	if (CheckKey::Key[KEY_INPUT_Z] == 1) z+=1.0f;
-	if (CheckKey::Key[KEY_INPUT_X] == 1) z-=1.0f;
+	if (CheckKey::Key[KEY_INPUT_Z] >= 1) z+=1.0f;
+	if (CheckKey::Key[KEY_INPUT_X] >= 1) z-=1.0f;
 }
