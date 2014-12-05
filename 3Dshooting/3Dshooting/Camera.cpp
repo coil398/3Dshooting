@@ -4,7 +4,9 @@
 
 Camera::Camera(Player* player)
 {
-	SetCameraPositionAndTargetAndUpVec(VGet(320, 400, -450), player->GetVector(), VGet(0, 1, 0));
+	model = player->GetVector();
+	model.y -= -75.0f;
+	SetCameraPositionAndTargetAndUpVec(VGet(640, 540, -800), model, VGet(0, 1, 0));
 }
 
 

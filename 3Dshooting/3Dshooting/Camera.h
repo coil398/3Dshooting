@@ -4,7 +4,7 @@ class Camera
 {
 private:
 	int modelHandle;
-	Player* model;
+	VECTOR model;
 public:
 	Camera(Player* player);
 	~Camera();
