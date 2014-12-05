@@ -3,9 +3,9 @@
 
 Vector3::Vector3(float x,float y,float z)
 {
-	x = this->x;
-	y = this->y;
-	z = this->z;
+	this->x = x;
+	this->y = y;
+	this->z = z;
 }
 
 
@@ -15,7 +15,7 @@ Vector3::~Vector3()
 
 void Vector3::SetVector3(float x,float y,float z)
 {
-	x = this->x;
-	y = this->y;
-	z = this->z;
+	this->x = x;
+	this->y = y;
+	this->z = z;
 }

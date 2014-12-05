@@ -2,13 +2,17 @@
 #include "Vector3.h"
 
 
-Character::Character(float x,float y,float z,int hp)
+Character::Character(float x, float y, float z, int hp) :Vector3(x,y,z)
 {
 	this->hp = hp;
-	vector3->SetVector3(x, y, z);
 }
 
 
 Character::~Character()
 {
+}
+
+void Character::AddVector(float x,float y,float z)
+{
+	SetVector3(this->x + x, this->y + y, this->z + z);
 }

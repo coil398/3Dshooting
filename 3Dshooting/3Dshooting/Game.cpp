@@ -7,7 +7,6 @@
 
 Game::Game()
 {
-	int a = 0;
 }
 
 
@@ -18,4 +17,5 @@ Game::~Game()
 //ÉQÅ[ÉÄé¿çs
 void Game::Run()
 {
+
 }
