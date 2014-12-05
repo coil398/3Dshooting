@@ -5,20 +5,21 @@
 Enemy::Enemy(float x, float y, float z,int hp) :Character(x, y, z,hp)
 {
 	//3Dモデル読み込み
-	ModelHandle = MV1LoadModel("../materials/model/marisa/marisa_1.04NS.pmx");
+	EnemyModelHandle = MV1LoadModel("../materials/model/marisa/marisa_1.04NS.pmx");
+	if (EnemyModelHandle == -1)return;
+
+	EnemyMaterialNum = MV1GetMaterialNum(EnemyModelHandle);
+	for (int i = 0; i < EnemyMaterialNum;i++)
+	{
+		dotWidth = MV1GetMaterialOutLineDotWidth(EnemyModelHandle,i);
+		MV1SetMaterialOutLineDotWidth(EnemyModelHandle, i, dotWidth / 5.0f);
+	}
+	return;
 }
 
 
 Enemy::~Enemy()
 {
-}
-
-void Enemy::Draw()
-{
-	//3Dモデルの移動
-	MV1SetPosition(ModelHandle, VGet(x, y, z));
-	//3Dモデルの描画
-	MV1DrawModel(ModelHandle);
 }
 
 void Enemy::Control()
@@ -31,4 +32,12 @@ void Enemy::Control()
 	if (key & PAD_INPUT_RIGHT) x += 1.0f;
 	if (CheckKey::Key[KEY_INPUT_Z] >= 1) z+=1.0f;
 	if (CheckKey::Key[KEY_INPUT_X] >= 1) z-=1.0f;
+}
+
+void Draw()
+{
+	//3Dモデルの移動
+	MV1SetPosition(EnemyModelHandle, VGet(x, y, z));
+	//3Dモデルの描画
+	MV1DrawModel(ModelHandle);
 }

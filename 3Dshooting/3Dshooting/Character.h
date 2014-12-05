@@ -9,5 +9,6 @@ public:
 	Character(float x,float y,float z,int hp);
 	~Character();
 	void AddVector(float x, float y, float z);
+	virtual void Draw() = 0;
 };
 

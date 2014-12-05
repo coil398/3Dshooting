@@ -1,24 +1,26 @@
-﻿2014/12/05 22:35:45 にビルドを開始しました。
+﻿2014/12/05 22:56:54 にビルドを開始しました。
      1>ノード 2 上のプロジェクト "D:\3Dshooting\3Dshooting\3Dshooting\3Dshooting.vcxproj" (Build ターゲット)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ID:\lib /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Enemy.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ID:\lib /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Character.cpp Enemy.cpp Game.cpp Main.cpp Player.cpp
          Enemy.cpp
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\3Dshooting\3Dshooting\Debug\3Dshooting.exe" /INCREMENTAL /NOLOGO /LIBPATH:D:\lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\3Dshooting\3Dshooting\Debug\3Dshooting.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\3Dshooting\3Dshooting\Debug\3Dshooting.lib" /MACHINE:X86 Debug\BackGround.obj
-         Debug\Barrage.obj
-         Debug\Bullet.obj
-         Debug\Character.obj
-         Debug\CheckKey.obj
-         Debug\Enemy.obj
-         Debug\Fps.obj
-         Debug\Game.obj
-         Debug\IShot.obj
-         Debug\Main.obj
-         Debug\Player.obj
-         Debug\Vector3.obj
-         3Dshooting.vcxproj -> D:\3Dshooting\3Dshooting\Debug\3Dshooting.exe
-     1>プロジェクト "D:\3Dshooting\3Dshooting\3Dshooting\3Dshooting.vcxproj" (Build ターゲット) のビルドが完了しました。
+         Character.cpp
+     1>d:\3dshooting\3dshooting\3dshooting\character.cpp(23): error C2065: 'ModelHandle' : 定義されていない識別子です。
+     1>d:\3dshooting\3dshooting\3dshooting\character.cpp(23): error C2065: 'x' : 定義されていない識別子です。
+     1>d:\3dshooting\3dshooting\3dshooting\character.cpp(23): error C2065: 'y' : 定義されていない識別子です。
+     1>d:\3dshooting\3dshooting\3dshooting\character.cpp(23): error C2065: 'z' : 定義されていない識別子です。
+     1>d:\3dshooting\3dshooting\3dshooting\character.cpp(23): error C3861: 'MV1SetPosition': 識別子が見つかりませんでした
+     1>d:\3dshooting\3dshooting\3dshooting\character.cpp(23): error C3861: 'VGet': 識別子が見つかりませんでした
+     1>d:\3dshooting\3dshooting\3dshooting\character.cpp(25): error C2065: 'ModelHandle' : 定義されていない識別子です。
+     1>d:\3dshooting\3dshooting\3dshooting\character.cpp(25): error C3861: 'MV1DrawModel': 識別子が見つかりませんでした
+         コードを生成中...
+         コンパイル中...
+         Main.cpp
+         コードを生成中...
+         スキップ中... (関連する変更は検出されませんでした)
+         Player.cpp
+         Game.cpp
+     1>プロジェクト "D:\3Dshooting\3Dshooting\3Dshooting\3Dshooting.vcxproj" (Build ターゲット) のビルドが終了しました -- 失敗。
 
-ビルドに成功しました。
+ビルドに失敗しました。
 
-経過時間 00:00:01.10
+経過時間 00:00:01.34
