@@ -35,6 +35,11 @@ void Player::Move()
 	if (CheckKey::Key[KEY_INPUT_X] >= 1) AddZ(-1.0f);
 }
 
+void Player::Rot()
+{
+	//“Á‚É‚È‚µ
+}
+
 void Player::Draw()
 {
 	//3Dƒ‚ƒfƒ‹‚ÌˆÚ“®

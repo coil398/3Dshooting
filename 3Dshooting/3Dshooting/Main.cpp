@@ -38,6 +38,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 		player->Move();
 
+		player->Rot();
+
 		player->Draw();
 
 		fps->Update();

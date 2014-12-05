@@ -62,3 +62,8 @@ float Character::GetZ()
 {
 	return vector.z;
 }
+
+VECTOR Character::GetVector()
+{
+	return vector;
+}
