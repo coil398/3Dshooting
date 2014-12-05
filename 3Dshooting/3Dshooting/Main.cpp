@@ -1,9 +1,17 @@
 #include "DxLib.h"
 #include "Game.h"
 
+#define SizeX 1280
+#define SizeY 960
+#define COLORBITNUM 16
+
 // プログラムは WinMain から始まります
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
+	ChangeWindowMode(TRUE); // ウィンドウモードに設定
+
+	SetGraphMode(SizeX, SizeY, COLORBITNUM);
+
 	if (DxLib_Init() == -1)		// ＤＸライブラリ初期化処理
 	{
 		return -1;			// エラーが起きたら直ちに終了
