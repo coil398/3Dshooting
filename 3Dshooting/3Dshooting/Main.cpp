@@ -13,7 +13,6 @@
 // プログラムは WinMain から始まります
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
-	int counter = 0;
 	ChangeWindowMode(TRUE); // ウィンドウモードに設定
 
 	for (int i = 0; i < 256; i++)
@@ -30,26 +29,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	SetDrawScreen(DX_SCREEN_BACK); //ダブルバッファリングの準備
 
 	Game* game = new Game(); //ゲームクラスのインスタンスを作成
-	Player* player = new Player(640.0f, 420.0f, -700.0f, 100);
-	Fps *fps = new Fps();
 
 	while (ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0 && CheckKey::gpUpdateKey() == 0)
 	{
-
-		player->Move();
-
-		player->Rot();
-
-		player->Draw();
-
-		fps->Update();
-		fps->Draw();
-
-		counter++;
+		game->Run();
 	}
 
 	delete game;
-	delete player;
 
 	DxLib_End();				// ＤＸライブラリ使用の終了処理
 

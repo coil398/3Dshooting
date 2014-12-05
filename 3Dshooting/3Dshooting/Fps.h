@@ -1,5 +1,4 @@
-#include <math.h>
-#include "DxLib.h"
+#pragma once
 
 class Fps{
 	int mStartTime;         //‘ª’èŠJn

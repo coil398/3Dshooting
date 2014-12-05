@@ -1,4 +1,5 @@
 #include "Fps.h"
+#include <DxLib.h>
 
 
 Fps::Fps()
