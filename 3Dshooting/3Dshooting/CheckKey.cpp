@@ -1,4 +1,5 @@
 #include "CheckKeyh.h"
+#include <DxLib.h>
 
 int CheckKey::Key[256];
 

@@ -6,7 +6,7 @@ private:
 	int modelHandle;
 	VECTOR model;
 public:
-	Camera(Player* player);
+	Camera(const Player& player);
 	~Camera();
 };
 

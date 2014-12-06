@@ -1,5 +1,4 @@
 #pragma once
-#include "vector3.h"
 #include <DxLib.h>
 
 class Character
@@ -24,6 +23,6 @@ public:
 	float GetX();
 	float GetY();
 	float GetZ();
-	VECTOR GetVector();
+	VECTOR GetVector()const;
 };
 

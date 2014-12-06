@@ -1,6 +1,5 @@
 #pragma once
 #include "Character.h"
-#include "Vector3.h"
 
 class Enemy :
 	public Character
