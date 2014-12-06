@@ -38,6 +38,9 @@ void Game::Run()
 	//プレイヤーの回転
 	player->Rot();
 
+	//カメラのズームインとズームアウト
+	camera->MoveCamera();
+
 	//ステージの描画
 	stage->Draw();
 
@@ -45,10 +48,10 @@ void Game::Run()
 	player->Draw();
 
 	//fps更新
-	//fps->Update();
+	fps->Update();
 
 	//fps表示
-	///fps->Draw();
+	fps->Draw();
 
 	//カウンター増やし
 	counter++;

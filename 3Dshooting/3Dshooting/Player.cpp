@@ -46,16 +46,6 @@ void Player::Draw()
 	MV1SetPosition(GetModelHandle(), VGet(GetX(), GetY(), GetZ()));
 	//3Dƒ‚ƒfƒ‹‚Ì•`‰æ
 	MV1DrawModel(GetModelHandle());
-
-	//3Dƒ‚ƒfƒ‹‚ÌˆÚ“®
-	MV1SetPosition(GetModelHandle(), VGet(GetX() - 50.0f, GetY(), GetZ() + 50.0f));
-	//3Dƒ‚ƒfƒ‹‚Ì•`‰æ
-	MV1DrawModel(GetModelHandle());
-
-	//3Dƒ‚ƒfƒ‹‚ÌˆÚ“®
-	MV1SetPosition(GetModelHandle(), VGet(GetX() + 50.0f, GetY(), GetZ() + 50.0f));	
-	//3Dƒ‚ƒfƒ‹‚Ì•`‰æ
-	MV1DrawModel(GetModelHandle());
 }
 
 int Player::GetModelHandle()

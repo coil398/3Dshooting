@@ -7,7 +7,7 @@ BackGround::BackGround()
 	//ステージデータ読み込み
 	StageModelHandle = MV1LoadModel("../materials/stage/Vual_library/魔法図書館.x");
 	//ステージを大きくする
-	MV1SetScale(GetModelHandle(), VGet(1000,1000,1000));
+	MV1SetScale(GetModelHandle(), VGet(50,50,50));
 	//あたり判定
 	//MV1SetupCollInfo(StageModelHandle, -1);
 }
