@@ -11,6 +11,8 @@ public:
 	Camera(const Player& player);
 	~Camera();
 	void MoveCamera();
+	void AddX(float x);
+	void AddY(float y);
 	void AddZ(float z);
 };
 

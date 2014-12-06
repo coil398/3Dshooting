@@ -38,7 +38,7 @@ void Game::Run()
 	//プレイヤーの回転
 	player->Rot();
 
-	//カメラのズームインとズームアウト
+	//カメラ操作関数
 	camera->MoveCamera();
 
 	//ステージの描画
