@@ -1,5 +1,4 @@
 #include "Character.h"
-#include "Vector3.h"
 #include "DxLib.h"
 
 
@@ -63,7 +62,7 @@ float Character::GetZ()
 	return vector.z;
 }
 
-VECTOR Character::GetVector()
+VECTOR Character::GetVector()const
 {
 	return vector;
 }
