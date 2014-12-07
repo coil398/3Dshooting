@@ -5,10 +5,10 @@
 #include <math.h>
 
 
-Camera::Camera(const Player& player)
+Camera::Camera(VECTOR Eye)
 {
 
-	model = player.GetVector(); //モデルの座標を取得
+	model = Eye; //モデルの座標を取得
 	model.y -= -75.0f; //モデルの中心を上に
 	vCamera = model; //カメラの位置をモデルと一致
 	vCamera.z -= 80.0f;
@@ -28,7 +28,7 @@ Camera::~Camera()
 }
 
 //カメラ操作関数
-void Camera::CameraControl(const Player& player)
+void Camera::CameraControl(const Player& player)const
 {
 }
 

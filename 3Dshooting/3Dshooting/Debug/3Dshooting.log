@@ -1,8 +1,11 @@
-﻿2014/12/07 19:42:18 にビルドを開始しました。
+﻿2014/12/07 20:00:35 にビルドを開始しました。
      1>ノード 2 上のプロジェクト "D:\3Dshooting\3Dshooting\3Dshooting\3Dshooting.vcxproj" (Build ターゲット)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ID:\3Dshooting\3Dshooting\\DXlib /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Player.cpp
-         Player.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ID:\3Dshooting\3Dshooting\\DXlib /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Camera.cpp Game.cpp
+         Game.cpp
+         Camera.cpp
+     1>d:\3dshooting\3dshooting\3dshooting\camera.cpp(22): warning C4305: '引数' : 'double' から 'float' へ切り詰めます。
+         コードを生成中...
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\3Dshooting\3Dshooting\Debug\3Dshooting.exe" /INCREMENTAL /NOLOGO /LIBPATH:D:\3Dshooting\3Dshooting\\DXlib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\3Dshooting\3Dshooting\Debug\3Dshooting.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\3Dshooting\3Dshooting\Debug\3Dshooting.lib" /MACHINE:X86 Debug\BackGround.obj
          Debug\Barrage.obj
@@ -20,4 +23,4 @@
 
 ビルドに成功しました。
 
-経過時間 00:00:01.06
+経過時間 00:00:01.50

@@ -46,3 +46,8 @@ int Player::GetModelHandle()
 {
 	return PlayerModelHandle;
 }
+
+void Player::Process()
+{
+	
+}

@@ -17,6 +17,7 @@ private:
 	BackGround* stage;
 	Fps* fps;
 	Camera* camera;
+	VECTOR Eye; //ƒJƒƒ‰‚ÌˆÊ’u
 public:
 	Game();
 	~Game();

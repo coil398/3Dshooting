@@ -15,5 +15,6 @@ public:
 	void Move()override;
 	void Rot()override;
 	int GetModelHandle()override;
+	void Process();
 };
 

@@ -8,6 +8,7 @@
 
 Game::Game()
 {
+	Eye = VGet(1.0f, 1.0f, 1.0f);
 	nowInput = 0;
 	//プレイヤー作成xyzHP
 	player = new Player(0.0f, 0.0f, 0.0f, 0.0f, 100);
@@ -15,7 +16,7 @@ Game::Game()
 	//FPSを取得し表示する
 	fps = new Fps();
 	//カメラオブジェクト
-	camera = new Camera(*player);
+	camera = new Camera(Eye);
 }
 
 
@@ -42,6 +43,8 @@ Game::~Game()
 void Game::Run()
 {
 	Input();
+
+	player->Process();
 
 	//プレイヤーの移動
 	player->Move();

@@ -8,9 +8,9 @@ private:
 	VECTOR vCamera;
 	VECTOR model;
 public:
-	Camera(const Player& player);
+	Camera(VECTOR Eye);
 	~Camera();
-	void CameraControl(const Player& player);
+	void CameraControl(const Player& player)const;
 	void Camera::RotCamera(const VECTOR& vPlayer, VECTOR *vCamera,float arg);
 	void AddX(float x);
 	void AddY(float y);
