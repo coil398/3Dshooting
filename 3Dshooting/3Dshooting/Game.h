@@ -17,7 +17,7 @@ private:
 	BackGround* stage;
 	Fps* fps;
 	Camera* camera;
-	VECTOR Eye; //カメラの位置
+	VECTOR eye; //カメラの位置
 public:
 	Game();
 	~Game();

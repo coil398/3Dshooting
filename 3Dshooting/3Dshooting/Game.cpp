@@ -8,15 +8,15 @@
 
 Game::Game()
 {
-	Eye = VGet(1.0f, 1.0f, 1.0f);
+	eye = VGet(0.0f,470.0f, -200.0f);
 	nowInput = 0;
 	//プレイヤー作成xyzHP
-	player = new Player(0.0f, 0.0f, 0.0f, 0.0f, 100);
+	player = new Player(0.0f, 420.0f, 0.0f, 0.0f, 100);
 	stage = new BackGround();
 	//FPSを取得し表示する
 	fps = new Fps();
 	//カメラオブジェクト
-	camera = new Camera(Eye);
+	camera = new Camera(*player,eye);
 }
 
 
@@ -44,22 +44,17 @@ void Game::Run()
 {
 	Input();
 
-	player->Process();
-
-	//プレイヤーの移動
-	player->Move();
-
-	//プレイヤーの回転
-	player->Rot();
-
-	//カメラ操作関数
-	camera->CameraControl(*player);
-
 	//ステージの描画
 	stage->Draw();
 
+	//プレイヤーの処理
+	player->Process(&nowInput, &edgeInput, player, eye, stage);
+
 	//プレイヤーの描画
 	player->Draw();
+
+	//カメラの処理
+	camera->Process(&nowInput, player,&eye,stage);
 
 	//fps更新
 	fps->Update();

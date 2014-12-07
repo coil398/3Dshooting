@@ -17,6 +17,7 @@ public:
 	~Character();
 	virtual void Draw() = 0; //各キャラクタの描画関数
 	virtual int GetModelHandle()=0; //各キャラクタのモデルデータハンドル
+	virtual void SetModelHandle(int ModelHandle) = 0;
 	virtual void Move() = 0; //キャラクター移動関数
 	virtual void Rot() = 0; //キャラクター回転関数
 
@@ -30,5 +31,8 @@ public:
 	float GetY();
 	float GetZ();
 	VECTOR GetVector()const;
+	float GetAngle();
+	void SetVector(VECTOR v);
+	void SetAngle(float angle);
 };
 

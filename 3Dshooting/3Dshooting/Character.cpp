@@ -64,3 +64,18 @@ VECTOR Character::GetVector()const
 {
 	return vector;
 }
+
+float Character::GetAngle()
+{
+	return angle;
+}
+
+void Character::SetAngle(float angle)
+{
+	this->angle = angle;
+}
+
+void Character::SetVector(VECTOR v)
+{
+	this->vector = v;
+}

@@ -9,7 +9,7 @@ BackGround::BackGround()
 	//ステージを大きくする
 	MV1SetScale(GetModelHandle(), VGet(50,50,50));
 	//あたり判定
-	//MV1SetupCollInfo(StageModelHandle, -1);
+	MV1SetupCollInfo(StageModelHandle, -1);
 }
 
 
