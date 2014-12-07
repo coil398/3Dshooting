@@ -4,9 +4,15 @@
 class Character
 {
 private:
+<<<<<<< HEAD
 	VECTOR vector;
 	float angle; //モデルの向く方向
+=======
+	VECTOR vector; //モデルの座標
+	VECTOR Direction; //モデルの向く方向
+>>>>>>> origin/master
 	int hp;
+	float angle; //モデルの向いている方向
 public:
 	Character(float x,float y,float z,float angle,int hp);
 	~Character();

@@ -4,6 +4,10 @@
 
 Character::Character(float x, float y, float z,float angle, int hp)
 {
+<<<<<<< HEAD
+=======
+	this->angle = angle;
+>>>>>>> origin/master
 	vector = VGet(x, y, z);
 }
 
