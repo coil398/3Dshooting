@@ -10,7 +10,7 @@ private:
 	float dotWidth;
 	float r = 0;//ŽŽ‚µ‚É‰ñ‚·
 public:
-	Player(float x,float y,float z,int hp);
+	Player(float x,float y,float z,float angle,int hp);
 	~Player();
 	void Draw()override;
 	void Move()override;

@@ -25,6 +25,7 @@ Camera::~Camera()
 //ƒJƒƒ‰‘€ìŠÖ”
 void Camera::MoveCamera()
 {
+	/*
 	SetCameraPositionAndTargetAndUpVec(vCamera, model, VGet(0, 1, 0));
 	if (CheckKey::Key[KEY_INPUT_A] >= 1) AddX(1.0f);
 	if (CheckKey::Key[KEY_INPUT_D] >= 1) AddX(-1.0f);
@@ -32,6 +33,7 @@ void Camera::MoveCamera()
 	if (CheckKey::Key[KEY_INPUT_W] >= 1) AddY(-1.0f);
 	if (CheckKey::Key[KEY_INPUT_Q] >= 1) AddZ(1.0f);
 	if (CheckKey::Key[KEY_INPUT_E] >= 1) AddZ(-1.0f);
+	*/
 }
 
 void Camera::AddX(float x)

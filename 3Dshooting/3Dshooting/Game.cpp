@@ -9,7 +9,7 @@
 Game::Game()
 {
 	//プレイヤー作成xyzHP
-	player = new Player(640.0f, 420.0f, -700.0f, 100);
+	player = new Player(0.0f,0.0f,0.0f,0.0f, 100);
 	stage = new BackGround();
 	//FPSを取得し表示する
 	fps = new Fps();
