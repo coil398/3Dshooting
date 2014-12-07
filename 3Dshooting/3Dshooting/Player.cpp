@@ -3,7 +3,7 @@
 #include "CheckKeyh.h"
 
 
-Player::Player(float x, float y, float z,int hp) :Character(x,y,z,hp)
+Player::Player(float x, float y, float z,float angle,int hp) :Character(x,y,z,angle,hp)
 {
 	//3Dƒ‚ƒfƒ‹“Ç‚Ýž‚Ý
 	PlayerModelHandle = MV1LoadModel("../materials/model/marisa/marisa.pmx");
@@ -27,12 +27,12 @@ void Player::Move()
 {
 	key = GetJoypadInputState(DX_INPUT_KEY_PAD1);
 
-	if (key & PAD_INPUT_DOWN) AddY(-1.0f);
-	if (key & PAD_INPUT_UP) AddY(1.0f);
-	if (key & PAD_INPUT_LEFT) AddX(-1.0f);
+	if (key & PAD_INPUT_DOWN) AddZ(-1.0f); //‰œs‚«
+	if (key & PAD_INPUT_UP) AddZ(1.0f);
+	if (key & PAD_INPUT_LEFT) AddX(-1.0f); //¶‰E
 	if (key & PAD_INPUT_RIGHT) AddX(1.0f);
-	if (CheckKey::Key[KEY_INPUT_Z] >= 1) AddZ(1.0f);
-	if (CheckKey::Key[KEY_INPUT_X] >= 1) AddZ(-1.0f);
+	//if (CheckKey::Key[KEY_INPUT_Z] >= 1) AddZ(1.0f);
+	//if (CheckKey::Key[KEY_INPUT_X] >= 1) AddZ(-1.0f);
 }
 
 void Player::Rot()

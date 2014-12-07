@@ -10,7 +10,8 @@ private:
 public:
 	Camera(const Player& player);
 	~Camera();
-	void MoveCamera();
+	void CameraControl(const Player& player);
+	void Camera::RotCamera(const VECTOR& vPlayer, VECTOR *vCamera,float arg);
 	void AddX(float x);
 	void AddY(float y);
 	void AddZ(float z);

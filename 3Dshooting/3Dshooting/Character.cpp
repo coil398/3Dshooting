@@ -2,12 +2,10 @@
 #include "DxLib.h"
 
 
-Character::Character(float x, float y, float z, int hp)
+Character::Character(float x, float y, float z,float angle, int hp)
 {
-	vector.x = x;
-	vector.y = y;
-	vector.z = z;
-
+	this->angle = angle;
+	vector = VGet(x, y, z);
 }
 
 
