@@ -1,0 +1,104 @@
+■球状Skybox(Skydome)テクスチャ用アクセサリ(改) for MMD
+インターネットなどで配布されている、Skydome用テクスチャを貼り付けるための
+MMD用アクセサリです。
+
+【前バージョンからの変更点】
+・スカイドーム(半球)のマッピングが違っていたので修正(縦長に表示されていた)
+・全体的にポリゴン数を増加(7倍ほど)
+・スカイドーム(魚眼)および地面遠景用のマスクアクセサリを追加
+・その他リンク、注記を追加
+
+■Skydome用テクスチャの入手について
+「skydome textures free」等の語句で検索すれば、フリー素材が見つかると思います。
+JPG形式で提供されているのがほとんどですので、適宜BMPへ変換するなどしてください。
+以下、配布サイトをいくつか挙げてみます
+
+Mike Pan's DIGITALANTHOLOGY
+http://mikepan.homeip.net/earth
+※Alien Skyはスカイドーム(球).x用
+　クレジット表記は自由、非商用利用に限る
+
+Philo's Sky Collection
+http://www.philohome.com/skycollec/skycollec.htm
+※Original fisheye image → スカイドーム(魚眼).x用
+　Equirectangular corrected image → スカイドーム(球).x用
+　使用制限なし
+
+Continuum3D - 3d models, Free 360 degree sky maps
+http://lfgrafix.com/grafix/Skies_Free/SkyBasic-1.html
+http://lfgrafix.com/grafix/Skies_Free/SkyBasic-2.html
+http://lfgrafix.com/grafix/Skies_Free/SkyPlanetarium-1.html
+http://lfgrafix.com/grafix/Skies_Free/SkySciFi-1.html
+http://lfgrafix.com/grafix/Skies_Free/Environment-1.html
+※ほぼスカイドーム(球).x用
+　画像内にロゴが入っているものあり。いかなる形態でも再販不可
+　元画像配布の際はクレジットおよびリンクが必要
+
+■MMDのテクスチャの仕様について
+※ MMD 3.30より、16ビットカラーの制限はなくなりました
+
+世に出回っているBMPのほとんどは24ビットフォーマットで保存されていますが、
+今のところ(v3.23時点)MMDでそのまま読み込むと、16ビットに減色されて表示されるようです。
+32ビットフォーマットのBMPに変換すれば綺麗なまま表示されるようですので、
+減色した結果が気になるようであれば、各種ツール(ViXなど)で変換してみてください。
+ただし、32ビットフォーマットのBMPはメタセコイアなど他のツールで読み込めなくなる
+ことがありますので、原本のバックアップは忘れないようにしてください。
+
+K_OKADA's Webpage - ViX
+http://www.katch.ne.jp/~k_okada/vixintro/
+
+
+■内容物
+スカイドーム(球).x
+360度全面テクスチャ(解像度2:1)を使用する際のアクセサリ。
+テクスチャ名にskydome360.bmpを使用します。
+
+スカイドーム(半球).x
+水平線から上部分の半球型テクスチャ(解像度4:1)を使用する際のアクセサリ。
+テクスチャ名にskydome180.bmpを使用します。
+
+スカイドーム(魚眼).x
+Fished Eye、Mirrored Ballと呼ばれる半球型テクスチャ(解像度1:1)を使用する際のアクセサリ。
+テクスチャ名にskydome_fe.bmpを使用します。
+
+スカイドーム(地面).x
+各種スカイドームに使用する地面アクセサリ。
+テクスチャ名にskydome_ground.bmpを使用します。
+
+スカイドーム(地面マスク).x
+水平線近くに空気遠近法のようなかすみを追加するマスク。
+
+skydome360.bmp skydome180.bmp skydome_fe.bmp
+skydome用テクスチャ。
+bmp形式にした後、同名のファイルで差し替えるか、アクセサリファイル*.x内の
+skydome.bmpの名前を書き換えるかして使用してください。
+
+skydome_ground1.bmp
+地面アクセサリ用テクスチャ(タイルパターン)。
+通常のテクスチャが使用できると思いますので、各自自由に差し替えてください。
+
+skydome_ground2.bmp
+地面アクセサリ用テクスチャ(一枚絵)。
+
+skydome_groundmask.tga
+地面マスク用半透明テクスチャ。
+
+skydome.mqo
+アクセサリ元データ。改造などにどうぞ。
+同梱のアクセサリは、9倍に拡大して出力しています。
+
+
+・注意
+MMDは.bmpおよび.tgaのテクスチャしか読み込むことが出来ませんので、
+Windows付属のペイントソフトなどでbmpに変換してから差し替えてください。
+
+球体中心部から外れると空が欠けることがあるので、なるべく中心付近で撮影してください。
+気になる場合は拡大率を調整してください。
+
+また、球体天頂部(および天底部)のテクスチャがゆがんでいますが、
+回避方法が分かりません。カメラワークなどで目立たないようにしてください。
+
+
+・メモ
+このアクセサリ自体の改造や使用にあたっては、自由にしていただいて構いませんが、
+外部のテクスチャを使用の際には、(クレジット表記など)制作者の指示に従ってください。

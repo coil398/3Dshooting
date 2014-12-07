@@ -4,8 +4,8 @@
 #include "CheckKeyh.h"
 #include <math.h>
 #define CAMERA_ANGLE_SPEED 0.05f
-#define CAMERA_PLAYER_TARGET_HEIGHT 50.0f //プレイヤーからどれくらいの高さを注視点にするか
-#define CAMERA_PLAYER_LENGTH 200.0f //プレイヤーとカメラとの距離
+#define CAMERA_PLAYER_TARGET_HEIGHT 10.0f //プレイヤーからどれくらいの高さを注視点にするか
+#define CAMERA_PLAYER_LENGTH 50.0f //プレイヤーとカメラとの距離
 #define CAMERA_COLLISION_SIZE 50.0f //カメラの当たり判定サイズ
 
 Camera::Camera(const Player& player,VECTOR eye)

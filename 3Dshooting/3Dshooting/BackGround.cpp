@@ -5,9 +5,9 @@
 BackGround::BackGround()
 {
 	//ステージデータ読み込み
-	StageModelHandle = MV1LoadModel("../materials/stage/Vual_library/魔法図書館.x");
+	StageModelHandle = MV1LoadModel("../materials/stage/スカイドームかくかくステージ/skydomestage.pmx");
 	//ステージを大きくする
-	MV1SetScale(GetModelHandle(), VGet(500,500,500));
+	MV1SetScale(StageModelHandle, VGet(100, 100, 100));
 	//あたり判定
 	MV1SetupCollInfo(StageModelHandle, -1);
 	//Fiffuseを調整
@@ -28,8 +28,8 @@ BackGround::~BackGround()
 //ステージモデルの表示
 void BackGround::Draw()
 {
-	MV1DrawModel(BackGroundHandle);
 	MV1DrawModel(StageModelHandle);
+	
 }
 
 int BackGround::GetModelHandle()

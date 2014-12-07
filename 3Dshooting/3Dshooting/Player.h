@@ -20,6 +20,7 @@ public:
 	int GetModelHandle()override;
 	void SetModelHandle(int ModelHandle)override;
 	void Process(int* nowInput, int* edgeInput, Player* player, VECTOR eye, BackGround* stage);
+	void aaa(Player* player);
 	void PlayerAngle();
 	void PlayerMove(Player* player, VECTOR MoveVec);
 	void PlayerAnimation(Player*player);

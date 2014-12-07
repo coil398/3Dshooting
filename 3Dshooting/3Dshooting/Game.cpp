@@ -11,7 +11,7 @@ Game::Game()
 	eye = VGet(0.0f,470.0f, -200.0f);
 	nowInput = 0;
 	//プレイヤー作成xyzHP
-	player = new Player(0.0f, 420.0f, 0.0f, 0.0f, 100);
+	player = new Player(0.0f, -5000.0f, 0.0f, 0.0f, 100);
 	stage = new BackGround();
 	//FPSを取得し表示する
 	fps = new Fps();

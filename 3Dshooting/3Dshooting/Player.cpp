@@ -3,7 +3,7 @@
 #include "CheckKeyh.h"
 #include <math.h>
 
-#define PLAYER_MOVE_SPEED 10.0f
+#define PLAYER_MOVE_SPEED 50.0f
 #define PLAYER_ANGLE_SPEED 0.2f
 #define PLAYER_MAX_HITCOLL 2048	// 処理するコリジョンポリゴンの最大数
 #define PLAYER_ENUM_DEFAULT_SIZE 800.0f // 周囲のポリゴン検出に使用する球の初期サイズ
@@ -70,6 +70,7 @@ void Player::Process(int* nowInput,int* edgeInput,Player* player,VECTOR eye,Back
 	VECTOR MoveVec;	// このフレームの移動ベクトル
 	int MoveFlag; // 移動したかどうかのフラグ( 1:移動した  0:移動していない )
 
+	/*
 	// ルートフレームのＺ軸方向の移動パラメータを無効にする
 	{
 		MATRIX LocalMatrix;
@@ -86,26 +87,21 @@ void Player::Process(int* nowInput,int* edgeInput,Player* player,VECTOR eye,Back
 		// ユーザー行列として平行移動成分を無効にした行列をルートフレームにセットする
 		MV1SetFrameUserLocalMatrix(PlayerModelHandle, 2, LocalMatrix);
 	}
+	*/
 
 	// プレイヤーの移動方向のベクトルを算出
 	{
 		// 方向ボタン「↑」を押したときのプレイヤーの移動ベクトルはカメラの視線方向ベクトル
 		UpMoveVec = VSub(player->GetVector(), eye);
-		if (player->GetVector().y > 3500.0f)
-		{
-			UpMoveVec.y = -0.1f;
-		}
-		if (player->GetVector().y < 420.0f)
-		{
-			UpMoveVec.y = 0.1f;
-		}
+		UpMoveVec.y = 0.0f;
+		
 
 		// 方向ボタン「←」を押したときのプレイヤーの移動ベクトルは上を押したときの方向ベクトルとＹ軸のプラス方向のベクトルに垂直な方向
 		LeftMoveVec = VCross(UpMoveVec, VGet(0.0f, 1.0f, 0.0f));
 
-		// 二つのベクトルを正規化( ベクトルの長さを１．０にすること )
-		UpMoveVec = VNorm(UpMoveVec);
-		LeftMoveVec = VNorm(LeftMoveVec);
+		// 二つのベクトルを正規化
+		//UpMoveVec = VNorm(UpMoveVec);
+		//LeftMoveVec = VNorm(LeftMoveVec);
 	}
 
 	// このフレームでの移動ベクトルを初期化
@@ -572,6 +568,15 @@ void Player::Process(int* nowInput,int* edgeInput,Player* player,VECTOR eye,Back
 	/*
 	PlayerAnimation(player);
 	*/
+
+	aaa(player);
+
+}
+
+void Player::aaa(Player* player)
+{
+	VECTOR a;
+	a = player->GetVector();
 }
 
 
