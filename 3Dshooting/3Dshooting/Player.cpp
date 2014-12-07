@@ -25,20 +25,7 @@ Player::~Player()
 
 void Player::Move()
 {
-	key = GetJoypadInputState(DX_INPUT_KEY_PAD1);
 
-<<<<<<< HEAD
-	if (key & PAD_INPUT_DOWN) AddZ(-1.0f);
-	if (key & PAD_INPUT_UP) AddZ(1.0f);
-	if (key & PAD_INPUT_LEFT) AddX(-1.0f);
-=======
-	if (key & PAD_INPUT_DOWN) AddZ(-1.0f); //‰œs‚«
-	if (key & PAD_INPUT_UP) AddZ(1.0f);
-	if (key & PAD_INPUT_LEFT) AddX(-1.0f); //¶‰E
->>>>>>> origin/master
-	if (key & PAD_INPUT_RIGHT) AddX(1.0f);
-	//if (CheckKey::Key[KEY_INPUT_Z] >= 1) AddZ(1.0f);
-	//if (CheckKey::Key[KEY_INPUT_X] >= 1) AddZ(-1.0f);
 }
 
 void Player::Rot()

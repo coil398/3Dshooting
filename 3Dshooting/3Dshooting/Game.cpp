@@ -10,11 +10,7 @@ Game::Game()
 {
 	nowInput = 0;
 	//プレイヤー作成xyzHP
-<<<<<<< HEAD
-	player = new Player(0.0f,0.0f,0.0f,0.0f, 100);
-=======
-	player = new Player(0.0f,0.0f,0.0f,0.0f,100);
->>>>>>> origin/master
+	player = new Player(0.0f, 0.0f, 0.0f, 0.0f, 100);
 	stage = new BackGround();
 	//FPSを取得し表示する
 	fps = new Fps();
