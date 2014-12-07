@@ -6,6 +6,7 @@ class BackGround
 private:
 	VECTOR vector;
 	int StageModelHandle;
+	int BackGroundHandle;
 public:
 	BackGround();
 	~BackGround();

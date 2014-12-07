@@ -3,7 +3,7 @@
 #include "CheckKeyh.h"
 #include <math.h>
 
-#define PLAYER_MOVE_SPEED 30.0f
+#define PLAYER_MOVE_SPEED 10.0f
 #define PLAYER_ANGLE_SPEED 0.2f
 #define PLAYER_MAX_HITCOLL 2048	// 処理するコリジョンポリゴンの最大数
 #define PLAYER_ENUM_DEFAULT_SIZE 800.0f // 周囲のポリゴン検出に使用する球の初期サイズ
@@ -89,9 +89,16 @@ void Player::Process(int* nowInput,int* edgeInput,Player* player,VECTOR eye,Back
 
 	// プレイヤーの移動方向のベクトルを算出
 	{
-		// 方向ボタン「↑」を押したときのプレイヤーの移動ベクトルはカメラの視線方向からＹ成分を抜いたもの
+		// 方向ボタン「↑」を押したときのプレイヤーの移動ベクトルはカメラの視線方向ベクトル
 		UpMoveVec = VSub(player->GetVector(), eye);
-		UpMoveVec.y = 0.0f;
+		if (player->GetVector().y > 3500.0f)
+		{
+			UpMoveVec.y = -0.1f;
+		}
+		if (player->GetVector().y < 420.0f)
+		{
+			UpMoveVec.y = 0.1f;
+		}
 
 		// 方向ボタン「←」を押したときのプレイヤーの移動ベクトルは上を押したときの方向ベクトルとＹ軸のプラス方向のベクトルに垂直な方向
 		LeftMoveVec = VCross(UpMoveVec, VGet(0.0f, 1.0f, 0.0f));

@@ -17,7 +17,7 @@ Camera::Camera(const Player& player,VECTOR eye)
 	SetCameraPositionAndTargetAndUpVec(eye, lookAt, VGet(0, 1, 0));
 
 	//カメラのクリップ指定
-	SetCameraNearFar(10, 1000);
+	SetCameraNearFar(10, 100000);
 
 	//視野角を設定
 	SetupCamera_Perspective(PI/3);
