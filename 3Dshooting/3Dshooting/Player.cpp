@@ -21,6 +21,7 @@ Player::Player(float x, float y, float z,float angle,int hp) :Character(x,y,z,an
 
 Player::~Player()
 {
+	MV1DeleteModel(PlayerModelHandle);
 }
 
 void Player::Move()

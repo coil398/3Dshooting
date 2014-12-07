@@ -6,6 +6,10 @@ class Character
 private:
 	VECTOR vector; //モデルの座標
 	VECTOR direction; //モデルの向く方向
+	VECTOR UpMoveVec; // 方向ボタン「↑」を入力をしたときのプレイヤーの移動方向ベクトル
+	VECTOR LeftMoveVec; // 方向ボタン「←」を入力をしたときのプレイヤーの移動方向ベクトル
+	VECTOR MoveVec; // このフレームの移動ベクトル
+	int MoveFlag; // 移動したかどうかのフラグ( 1:移動した  0:移動していない )
 	int hp;
 	float angle; //モデルの向いている方向
 public:
