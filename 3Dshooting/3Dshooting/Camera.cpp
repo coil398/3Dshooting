@@ -10,6 +10,8 @@
 
 Camera::Camera(const Player& player,VECTOR eye)
 {
+	angleH = DX_PI_F;
+	angleV = 0.0f;
 	lookAt = player.GetVector();
 	lookAt.y += 50.0f;
 	SetCameraPositionAndTargetAndUpVec(eye, lookAt, VGet(0, 1, 0));
