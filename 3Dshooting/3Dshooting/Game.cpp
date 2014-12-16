@@ -8,8 +8,6 @@
 
 Game::Game()
 {
-	eye = VGet(0.0f,470.0f, -200.0f);
-	nowInput = 0;
 	//プレイヤー作成xyzHP
 	player = new Player(0.0f, -5000.0f, 0.0f, 0.0f, 100);
 	stage = new BackGround();
@@ -20,13 +18,6 @@ Game::Game()
 }
 
 
-void Game::Input()
-{
-	old = nowInput;
-	nowInput = GetJoypadInputState(DX_INPUT_KEY_PAD1);
-	//新たに押されたボタンのビットだけ立っている値を代入する
-	edgeInput = nowInput & ~old;
-}
 
 Game::~Game()
 {
@@ -42,19 +33,13 @@ Game::~Game()
 //ゲーム実行
 void Game::Run()
 {
-	Input();
-
 	//ステージの描画
 	stage->Draw();
 
 	//プレイヤーの処理
-	player->Process(&nowInput, &edgeInput, player, eye, stage);
 
 	//プレイヤーの描画
 	player->Draw();
-
-	//カメラの処理
-	camera->Process(&nowInput, player,&eye,stage);
 
 	//fps更新
 	fps->Update();
