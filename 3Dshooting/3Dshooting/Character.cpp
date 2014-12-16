@@ -2,9 +2,8 @@
 #include "DxLib.h"
 
 
-Character::Character(float x, float y, float z,float angle, int hp)
+Character::Character(float x, float y, float z, int hp)
 {
-	this->angle = angle;
 	vector = VGet(x, y, z);
 }
 

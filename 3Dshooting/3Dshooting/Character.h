@@ -4,7 +4,6 @@
 class Character
 {
 private:
-	VECTOR vector; //モデルの座標
 	VECTOR direction; //モデルの向く方向
 	VECTOR UpMoveVec; // 方向ボタン「↑」を入力をしたときのプレイヤーの移動方向ベクトル
 	VECTOR LeftMoveVec; // 方向ボタン「←」を入力をしたときのプレイヤーの移動方向ベクトル
@@ -20,6 +19,8 @@ public:
 	virtual void SetModelHandle(int ModelHandle) = 0;
 	virtual void Move() = 0; //キャラクター移動関数
 	virtual void Rot() = 0; //キャラクター回転関数
+
+	VECTOR vector; //モデルの座標
 
 	//VECTOR型用の演算子オーバーロード
 	VECTOR operator+(VECTOR v);
