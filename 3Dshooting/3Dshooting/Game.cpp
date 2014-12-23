@@ -27,7 +27,7 @@ Game::~Game()
 	delete stage;
 	//game終了時、作ったオブジェクトのメモリを開放
 	delete player;
-	//delete enemy;
+	delete enemy;
 	delete fps;
 	delete camera;
 }
@@ -57,7 +57,7 @@ void Game::Run()
 	fps->Update();
 
 	//fps表示
-	fps->Draw(player->vector.x,player->vector.y);
+	//fps->Draw(player->vector.x,player->vector.y);
 
 	//カウンター増やし
 	counter++;

@@ -6,8 +6,11 @@ BackGround::BackGround()
 {
 	//ステージデータ読み込み
 	StageModelHandle = MV1LoadModel("../materials/stage/出口のない廊下/出口のない廊下.pmx");
+	//スカイドーム
+	//BackGroundHandle = MV1LoadModel("../materials/stage/sky_dome_11_pmx/sky_dome_11.pmx");
 	//ステージを大きくする
-	MV1SetScale(StageModelHandle, VGet(100, 100, 100));
+	MV1SetScale(StageModelHandle, VGet(50, 50, 50));
+	//MV1SetScale(BackGroundHandle, VGet(10, 10, 10));
 	//あたり判定
 	MV1SetupCollInfo(StageModelHandle, -1);
 	//Fiffuseを調整
@@ -23,13 +26,14 @@ BackGround::~BackGround()
 {
 	// ステージモデルの削除
 	MV1DeleteModel(StageModelHandle);
+	//MV1DeleteModel(BackGroundHandle);
 }
 
 //ステージモデルの表示
 void BackGround::Draw()
 {
 	MV1DrawModel(StageModelHandle);
-	
+	//MV1DrawModel(BackGroundHandle);
 }
 
 int BackGround::GetModelHandle()

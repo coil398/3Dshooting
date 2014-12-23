@@ -14,7 +14,10 @@ Camera::Camera()
 
 	SetCameraNearFar(0.0f, 10000.0);
 	*/
-	SetCameraNearFar(0.0f, 10000.0);
+	//カメラのクリップ指定
+	SetCameraNearFar(1.0f, 25000.0f);
+	//視野角を設定
+	SetupCamera_Perspective(DX_PI_F / 3);
 }
 
 Camera::~Camera()

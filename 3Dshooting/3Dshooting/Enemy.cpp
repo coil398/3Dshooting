@@ -25,7 +25,7 @@ void Enemy::Move(VECTOR playerVector,Enemy* enemy)
 	theta = atan((enemy->vector.x - playerVector.x) / 200.0f);
 	phi = atan((enemy->vector.y - playerVector.y) / (200.0f / cos(theta)));
 
-	MV1SetRotationXYZ(EnemyModelHandle, VGet(-phi, DX_PI_F, 0));
+	MV1SetRotationXYZ(EnemyModelHandle, VGet(-phi, -theta+DX_PI_F, 0));
 }
 
 void Enemy::Draw(VECTOR pos)
