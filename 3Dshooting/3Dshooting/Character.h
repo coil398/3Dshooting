@@ -11,14 +11,12 @@ private:
 	int MoveFlag; // 移動したかどうかのフラグ( 1:移動した  0:移動していない )
 	int hp;
 	float angle; //モデルの向いている方向
+protected:
+	float theta; //モデルのy軸回転角
+	float phi; //モデルのx軸回転角
 public:
-	Character(float x,float y,float z,float angle,int hp);
+	Character(float x,float y,float z,int hp);
 	~Character();
-	virtual void Draw() = 0; //各キャラクタの描画関数
-	virtual int GetModelHandle()=0; //各キャラクタのモデルデータハンドル
-	virtual void SetModelHandle(int ModelHandle) = 0;
-	virtual void Move() = 0; //キャラクター移動関数
-	virtual void Rot() = 0; //キャラクター回転関数
 
 	VECTOR vector; //モデルの座標
 
@@ -35,5 +33,6 @@ public:
 	float GetAngle();
 	void SetVector(VECTOR v);
 	void SetAngle(float angle);
+	virtual void Draw(VECTOR pos) = 0;
 };
 

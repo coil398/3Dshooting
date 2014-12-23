@@ -28,6 +28,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	SetDrawScreen(DX_SCREEN_BACK); //ダブルバッファリングの準備
 
+
 	Game* game = new Game(); //ゲームクラスのインスタンスを作成
 
 	//ゲーム内処理

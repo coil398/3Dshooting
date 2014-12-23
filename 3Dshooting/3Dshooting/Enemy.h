@@ -10,10 +10,10 @@ private:
 	int key; //‰Ÿ‚µ‚½ƒL[î•ñ
 	float dotWidth;
 public:
-	Enemy(float x, float y, float z,float angle,int hp);
+	Enemy(float x, float y, float z,int hp);
 	~Enemy();
-	void Draw();
-	void Move();
+	void Draw(VECTOR pos)override;
+	void Move(VECTOR playerVector,Enemy* enemy);
 	//int GetModelHandle()override;
 };
 

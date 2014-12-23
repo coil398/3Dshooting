@@ -5,7 +5,7 @@
 BackGround::BackGround()
 {
 	//ステージデータ読み込み
-	StageModelHandle = MV1LoadModel("../materials/stage/スカイドームかくかくステージ/skydomestage.pmx");
+	StageModelHandle = MV1LoadModel("../materials/stage/出口のない廊下/出口のない廊下.pmx");
 	//ステージを大きくする
 	MV1SetScale(StageModelHandle, VGet(100, 100, 100));
 	//あたり判定

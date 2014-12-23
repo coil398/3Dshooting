@@ -13,7 +13,7 @@ public:
 
 	bool Update();
 	float GetFps();
-	void Draw();
+	void Draw(float x,float y);
 
 	void Wait();
 };

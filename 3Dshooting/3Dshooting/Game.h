@@ -12,12 +12,16 @@ private:
 	int nowInput; //現在の入力状況
 	int edgeInput; //押されたボタンのみビットが立っている入力値
 	int counter = 0;
+	//プレイヤーのポインタ
 	Player* player;
-	//Enemy* enemy;
+	//エネミーのポインタ
+	Enemy* enemy;
+	//ステージのポインタ
 	BackGround* stage;
+	//FPSのポインタ
 	Fps* fps;
+	//カメラのポインタ
 	Camera* camera;
-	VECTOR eye; //カメラの位置
 public:
 	Game();
 	~Game();
