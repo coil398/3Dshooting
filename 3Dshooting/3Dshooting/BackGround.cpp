@@ -9,7 +9,7 @@ BackGround::BackGround()
 	//スカイドーム
 	//BackGroundHandle = MV1LoadModel("../materials/stage/sky_dome_11_pmx/sky_dome_11.pmx");
 	//ステージを大きくする
-	MV1SetScale(StageModelHandle, VGet(50, 50, 50));
+	MV1SetScale(StageModelHandle, VGet(20, 20, 20));
 	//MV1SetScale(BackGroundHandle, VGet(10, 10, 10));
 	//あたり判定
 	MV1SetupCollInfo(StageModelHandle, -1);

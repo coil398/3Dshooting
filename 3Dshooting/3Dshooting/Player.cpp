@@ -2,12 +2,15 @@
 #include "Character.h"
 #include "CheckKeyh.h"
 #include <math.h>
+#include <DxLib.h>
 
 Player::Player(float x, float y, float z, int hp) :Character(x,y,z,hp)
 {
 	//3Dƒ‚ƒfƒ‹“Ç‚İ‚İ
-	PlayerModelHandle = MV1LoadModel("../materials/model/marisa/marisa_1.04NS.pmx");
+	PlayerModelHandle = MV1LoadModel("../materials/model/–¶‰J–‚—¹/–¶‰J–‚—¹.pmd");
 	if (PlayerModelHandle == -1)return;
+
+	AttachIndex = MV1AttachAnim(PlayerModelHandle, 1, -1, FALSE);
 
 	PlayerMaterialNum = MV1GetMaterialNum(PlayerModelHandle);
 	for (int i = 0; i < PlayerMaterialNum; i++)
@@ -55,8 +58,11 @@ void Player::Move(Player* player,VECTOR enemyVector)
 
 void Player::Draw(VECTOR pos)
 {
+	time = 0.2f;
 	//3Dƒ‚ƒfƒ‹‚ÌˆÚ“®
 	MV1SetPosition(PlayerModelHandle, pos);
+
+	MV1SetAttachAnimTime(PlayerModelHandle, AttachIndex, time);
 	// ‚R‚cƒ‚ƒfƒ‹‚Ì•`‰æ  
 	MV1DrawModel(PlayerModelHandle);
 }

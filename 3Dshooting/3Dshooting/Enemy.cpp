@@ -6,7 +6,7 @@
 Enemy::Enemy(float x, float y, float z,int hp) :Character(x, y, z,hp)
 {
 	//エネミーのモデルデータ読み込み
-	EnemyModelHandle = MV1LoadModel("../materials/model/marisa/marisa_1.04NS.pmx");
+	EnemyModelHandle = MV1LoadModel("../materials/model/霧雨魔理沙/霧雨魔理沙.pmd");
 
 	//エネミーのモデルを１８０度回転
 	MV1SetRotationXYZ(EnemyModelHandle, VGet(0, 2*DX_PI_F , 0));
