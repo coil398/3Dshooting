@@ -21,6 +21,15 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	//描画サイズ変更
 	SetGraphMode(SizeX, SizeY, COLORBITNUM);
 
+	//Zバッファを有効にする
+	SetUseZBuffer3D(TRUE);
+
+	//Zバッファの書き込みを有効にする
+	SetWriteZBuffer3D(TRUE);
+
+	//アンチエイリアスの設定
+	SetFullSceneAntiAliasingMode(4, 2);
+
 	if (DxLib_Init() == -1)		// ＤＸライブラリ初期化処理
 	{
 		return -1;			// エラーが起きたら直ちに終了

@@ -5,7 +5,6 @@ class Player:public Character
 {
 private:
 	int PlayerModelHandle; //モデルデータのハンドルを格納
-	int AttachIndex; //モーションデータ
 	int PlayerMaterialNum; //モデルのマテリアルデータ格納
 	float x, y, z;
 	int hp;

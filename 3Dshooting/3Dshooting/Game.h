@@ -4,6 +4,7 @@
 #include "Fps.h"
 #include "Camera.h"
 #include "BackGround.h"
+#include "Bullet.h"
 
 class Game
 {
@@ -18,6 +19,8 @@ private:
 	Enemy* enemy;
 	//ステージのポインタ
 	BackGround* stage;
+	//弾のポインタ
+	Bullet* bullet;
 	//FPSのポインタ
 	Fps* fps;
 	//カメラのポインタ

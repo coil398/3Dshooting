@@ -30,7 +30,7 @@ void Camera::Move(VECTOR move,VECTOR lookAt)
 	cameraVector = move;
 	cameraVector.x += 10.0f;
 	cameraVector.z += 40.0f;
-	cameraVector.y += 20.0f;
+	cameraVector.y += 40.0f;
 
 	lookAt.y += 20.0f;
 

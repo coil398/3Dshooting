@@ -7,16 +7,19 @@
 Player::Player(float x, float y, float z, int hp) :Character(x,y,z,hp)
 {
 	//3Dƒ‚ƒfƒ‹“Ç‚İ‚İ
-	PlayerModelHandle = MV1LoadModel("../materials/model/–¶‰J–‚—¹/–¶‰J–‚—¹.pmd");
+	PlayerModelHandle = MV1LoadModel("../materials/model/–¶‰J–‚—¹/–¶‰J–‚—¹â´.pmd");
 	if (PlayerModelHandle == -1)return;
 
-	AttachIndex = MV1AttachAnim(PlayerModelHandle, 1, -1, FALSE);
+	MV1SetScale(PlayerModelHandle, VGet(2, 2, 2));
+
+	AttachIndex = MV1AttachAnim(PlayerModelHandle, 0, -1, FALSE);
+	TotalTime = MV1GetAttachAnimTotalTime(PlayerModelHandle, AttachIndex);
 
 	PlayerMaterialNum = MV1GetMaterialNum(PlayerModelHandle);
 	for (int i = 0; i < PlayerMaterialNum; i++)
 	{
 		dotWidth = MV1GetMaterialOutLineDotWidth(PlayerModelHandle, i);
-		MV1SetMaterialOutLineDotWidth(PlayerModelHandle, i, dotWidth / 5.0f);
+		MV1SetMaterialOutLineDotWidth(PlayerModelHandle, i, dotWidth / 10.0f);
 	}
 	return;
 }
@@ -58,7 +61,6 @@ void Player::Move(Player* player,VECTOR enemyVector)
 
 void Player::Draw(VECTOR pos)
 {
-	time = 0.2f;
 	//3Dƒ‚ƒfƒ‹‚ÌˆÚ“®
 	MV1SetPosition(PlayerModelHandle, pos);
 

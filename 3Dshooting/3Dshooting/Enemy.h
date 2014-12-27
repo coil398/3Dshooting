@@ -9,6 +9,7 @@ private:
 	int EnemyMaterialNum; //モデルのマテリアルデータ格納
 	int key; //押したキー情報
 	float dotWidth;
+	float time;
 public:
 	Enemy(float x, float y, float z,int hp);
 	~Enemy();

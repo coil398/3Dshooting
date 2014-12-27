@@ -11,28 +11,17 @@ private:
 	int MoveFlag; // 移動したかどうかのフラグ( 1:移動した  0:移動していない )
 	int hp;
 	float angle; //モデルの向いている方向
+	int isDamaged; //弾が当たったかのフラグ
 protected:
 	float theta; //モデルのy軸回転角
 	float phi; //モデルのx軸回転角
+	int AttachIndex; //モーションデータ
+	int TotalTime; //再生時間
 public:
 	Character(float x,float y,float z,int hp);
 	~Character();
 
 	VECTOR vector; //モデルの座標
-
-	//VECTOR型用の演算子オーバーロード
-	VECTOR operator+(VECTOR v);
-	VECTOR operator-(VECTOR v);
-	void AddX(float x);
-	void AddY(float y);
-	void AddZ(float z);
-	float GetX();
-	float GetY();
-	float GetZ();
-	VECTOR GetVector()const;
-	float GetAngle();
-	void SetVector(VECTOR v);
-	void SetAngle(float angle);
 	virtual void Draw(VECTOR pos) = 0;
 };
 
