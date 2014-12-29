@@ -44,13 +44,18 @@ void Bullet::ShotController(VECTOR start,VECTOR target)
 	}
 }
 
+int Bullet::IsShot()
+{
+	return isShot;
+}
+
 void Bullet::Shot(VECTOR start, VECTOR target)
 {
 	isShot++;
 
 	key = GetJoypadInputState(DX_INPUT_KEY_PAD1);
 
-	if (isShot > 10)
+	if (isShot >= 10)
 	{
 
 		if (key & PAD_INPUT_1)
@@ -76,7 +81,7 @@ void Bullet::Shot(VECTOR start, VECTOR target)
 void Bullet::Calculator(int i,VECTOR start,VECTOR target)
 {
 	//弾の位置をセット
-	bulletLocation[i] = VGet(start.x, start.y + 50.0f, start.z);
+	bulletLocation[i] = VGet(start.x, start.y + 45.0f, start.z);
 	//プレイヤーからエネミーへの方向ベクトル
 	direction[i] = VGet(target.x - start.x, target.y - start.y, target.z - start.z);
 	//方向ベクトルを正規化

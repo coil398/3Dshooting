@@ -1,5 +1,6 @@
 #pragma once
 #include "Character.h"
+#include "Bullet.h"
 
 class Enemy :
 	public Character
@@ -10,11 +11,16 @@ private:
 	int key; //âüÇµÇΩÉLÅ[èÓïÒ
 	float dotWidth;
 	float time;
+	int hpGaugeHandle;
+	float hpRatio;
+	Bullet* enBullet;
 public:
-	Enemy(float x, float y, float z,int hp);
+	Enemy(float x, float y, float z,int hp,int mp);
 	~Enemy();
-	void Draw(VECTOR pos)override;
-	void Move(VECTOR playerVector,Enemy* enemy);
+	void Draw()override;
+	void MotionHandler(VECTOR playerVector, Enemy* enemy, int isShot);
+	void Move(VECTOR playerVector, Enemy* enemy, int isShot);
 	//int GetModelHandle()override;
+	Bullet* GetBulletObj()override;
 };
 

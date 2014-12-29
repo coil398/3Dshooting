@@ -26,5 +26,6 @@ public:
 	void Calculator(int i, VECTOR start, VECTOR target);
 	void Draw();
 	void ShotController(VECTOR start, VECTOR target);
+	int IsShot();
 };
 

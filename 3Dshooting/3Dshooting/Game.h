@@ -1,7 +1,7 @@
 #pragma once
 #include "Player.h"
 #include "Enemy.h"
-#include "Fps.h"
+#include "Debug.h"
 #include "Camera.h"
 #include "BackGround.h"
 #include "Bullet.h"
@@ -12,7 +12,6 @@ private:
 	int old; //前の入力状況
 	int nowInput; //現在の入力状況
 	int edgeInput; //押されたボタンのみビットが立っている入力値
-	int counter = 0;
 	//プレイヤーのポインタ
 	Player* player;
 	//エネミーのポインタ
@@ -20,9 +19,9 @@ private:
 	//ステージのポインタ
 	BackGround* stage;
 	//弾のポインタ
-	Bullet* bullet;
-	//FPSのポインタ
-	Fps* fps;
+	//Bullet* bullet;
+	//DEBUGのポインタ
+	Debug* debug;
 	//カメラのポインタ
 	Camera* camera;
 public:
@@ -30,5 +29,7 @@ public:
 	~Game();
 	void Input();
 	void Run();
+	static int debugger; //デバッグのフラグ
+	static int counter;
 };
 

@@ -1,7 +1,7 @@
 #include "DxLib.h"
 #include "Game.h"
 #include "Enemy.h"
-#include "fps.h"
+#include "Debug.h"
 #include "CheckKeyh.h"
 
 #define SizeX 1280
