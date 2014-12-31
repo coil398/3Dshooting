@@ -34,7 +34,7 @@ void Bullet::ShotController(VECTOR start,VECTOR target)
 		if (bullet[j]==1)
 		{
 			//現在位置のベクトルに移動ベクトルを加算
-			bulletLocation[j] = VAdd(bulletLocation[j], Move[j]);
+			bulletLocation[j] = VAdd(bulletLocation[j], move[j]);
 		}
 
 		if (bulletLocation[j].z < -210.0f)
@@ -89,6 +89,7 @@ void Bullet::Calculator(int i,VECTOR start,VECTOR target)
 	//方向ベクトルを正規化
 	direction[i] = VNorm(direction[i]);
 	//１処理ごとの移動ベクトル
+<<<<<<< HEAD
 	Move[i] = VGet(bulletSpeed*direction[i].x, bulletSpeed*direction[i].y, bulletSpeed*direction[i].z);
 }
 
@@ -143,3 +144,7 @@ void Bullet::Collision(Enemy* enemy)
 	}
 }
 */
+=======
+	move[i] = VGet(bulletSpeed*direction[i].x, bulletSpeed*direction[i].y, bulletSpeed*direction[i].z);
+}
+>>>>>>> origin/菫ｮ豁｣

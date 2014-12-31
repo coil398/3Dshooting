@@ -13,15 +13,19 @@ private:
 	int bullet[BULLET];
 	int i, j, k, l;
 	int isShot; //弾が撃てるかどうか
+<<<<<<< HEAD
 	int isGraze[BULLET]; //グレイズ判定
 	int isCol[BULLET]; //コリジョン判定
+=======
+	int isGraze; //グレイズ判定
+>>>>>>> origin/菫ｮ豁｣
 	//バレットの速さ
 	float bulletSpeed;
 	float distVector; //ベクトルのノルム(２乗で使用)
 	VECTOR direction[BULLET];
 	VECTOR xAxis; //x軸方向ベクトル
 	VECTOR yAxis; //y軸方向ベクトル
-	VECTOR Move[BULLET]; //弾の座標に足していくベクトル
+	VECTOR move[BULLET]; //弾の座標に足していくベクトル
 	VECTOR bulletLocation[BULLET]; //弾の位置
 	VECTOR colVector; //コリジョン判定のためのベクトル
 public:

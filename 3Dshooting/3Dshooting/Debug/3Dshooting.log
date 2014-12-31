@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿2015/01/01 5:57:18 にビルドを開始しました。
      1>ノード 2 上のプロジェクト "D:\3Dshooting\3Dshooting\3Dshooting\3Dshooting.vcxproj" (Build ターゲット)。
      1>ClCompile:
@@ -111,7 +112,45 @@
      1>d:\3dshooting\3dshooting\3dshooting\enemy.h(24): error C3668: 'Enemy::GetBulletObj' : オーバーライド指定子 'override' を伴うメソッドは、基底クラス メソッドをオーバーライドしませんでした
          コードを生成中...
      1>プロジェクト "D:\3Dshooting\3Dshooting\3Dshooting\3Dshooting.vcxproj" (Build ターゲット) のビルドが終了しました -- 失敗。
+=======
+﻿2015/01/01 5:29:35 にビルドを開始しました。
+     1>ノード 2 上のプロジェクト "D:\3Dshooting\3Dshooting\3Dshooting\3Dshooting.vcxproj" (Build ターゲット)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ID:\3Dshooting\3Dshooting\\DXlib /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Barrage.cpp Bullet.cpp Camera.cpp Character.cpp Debug.cpp Enemy.cpp Game.cpp Main.cpp Player.cpp
+         Barrage.cpp
+         コードを生成中...
+         コンパイル中...
+         Player.cpp
+         Enemy.cpp
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.cpp(33): warning C4244: '=' : 'int' から 'float' への変換です。データが失われる可能性があります。
+         Bullet.cpp
+         コードを生成中...
+         スキップ中... (関連する変更は検出されませんでした)
+         Main.cpp
+         Game.cpp
+         Debug.cpp
+         Character.cpp
+         Camera.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\3Dshooting\3Dshooting\Debug\3Dshooting.exe" /INCREMENTAL /NOLOGO /LIBPATH:D:\3Dshooting\3Dshooting\\DXlib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\3Dshooting\3Dshooting\Debug\3Dshooting.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\3Dshooting\3Dshooting\Debug\3Dshooting.lib" /MACHINE:X86 Debug\BackGround.obj
+         Debug\Barrage.obj
+         Debug\Bullet.obj
+         Debug\Camera.obj
+         Debug\Character.obj
+         Debug\CheckKey.obj
+         Debug\Enemy.obj
+         Debug\Debug.obj
+         Debug\Game.obj
+         Debug\Main.obj
+         Debug\Player.obj
+         3Dshooting.vcxproj -> D:\3Dshooting\3Dshooting\Debug\3Dshooting.exe
+     1>プロジェクト "D:\3Dshooting\3Dshooting\3Dshooting\3Dshooting.vcxproj" (Build ターゲット) のビルドが完了しました。
+>>>>>>> origin/修正
 
 ビルドに失敗しました。
 
+<<<<<<< HEAD
 経過時間 00:00:03.49
+=======
+経過時間 00:00:02.71
+>>>>>>> origin/修正
