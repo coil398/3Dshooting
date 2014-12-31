@@ -1,7 +1,4 @@
 #include "Bullet.h"
-#include <dxlib.h>
-#include <math.h>
-
 
 Bullet::Bullet()
 {
@@ -40,6 +37,7 @@ void Bullet::ShotController(VECTOR start,VECTOR target)
 		if (bulletLocation[j].z < -210.0f)
 		{
 			bullet[j] = 0;
+			isGraze[j] = 1;
 		}
 	}
 }
@@ -64,7 +62,10 @@ void Bullet::Shot(VECTOR start, VECTOR target)
 			{
 				//使用されていないバレット配列のフラグをたてていく
 				bullet[i] = 1;
+<<<<<<< HEAD
 				isCol[i] = 0;
+=======
+>>>>>>> origin/master
 				isGraze[i] = 0;
 				Calculator(i, start, target);
 				isShot = 0;
@@ -89,6 +90,7 @@ void Bullet::Calculator(int i,VECTOR start,VECTOR target)
 	//方向ベクトルを正規化
 	direction[i] = VNorm(direction[i]);
 	//１処理ごとの移動ベクトル
+<<<<<<< HEAD
 <<<<<<< HEAD
 	Move[i] = VGet(bulletSpeed*direction[i].x, bulletSpeed*direction[i].y, bulletSpeed*direction[i].z);
 }
@@ -139,12 +141,33 @@ void Bullet::Collision(Enemy* enemy)
 					isGraze[l] = 1;
 					enemy->AddMp(10);
 				}
+=======
+	move[i] = VGet(bulletSpeed*direction[i].x, bulletSpeed*direction[i].y, bulletSpeed*direction[i].z);
+}
+
+/*
+void Bullet::Collision(Player* player)
+{
+	for (l = 0; l < BULLET;l++)
+	{
+		if (bullet[l] == 1)
+		{
+			colVector = VSub(character->vector, bulletLocation[l]);
+			distVector = (colVector.x * colVector.x + colVector.y * colVector.y + colVector.z * colVector.z);
+			if (isGraze[l] == 0)
+			{
+				character.AddMP(10);
+>>>>>>> origin/master
 			}
 		}
 	}
 }
+<<<<<<< HEAD
 */
 =======
 	move[i] = VGet(bulletSpeed*direction[i].x, bulletSpeed*direction[i].y, bulletSpeed*direction[i].z);
 }
 >>>>>>> origin/菫ｮ豁｣
+=======
+*/
+>>>>>>> origin/master

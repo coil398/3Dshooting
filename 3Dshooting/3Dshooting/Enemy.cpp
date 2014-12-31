@@ -36,6 +36,7 @@ Enemy::Enemy(float x, float y, float z,int hp,int mp) :Character(x, y, z,hp,mp)
 
 Enemy::~Enemy()
 {
+	delete enBullet;
 }
 
 void Enemy::Move(VECTOR playerVector,Enemy* enemy,int isShot)

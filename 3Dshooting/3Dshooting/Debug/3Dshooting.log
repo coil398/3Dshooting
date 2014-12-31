@@ -1,9 +1,14 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿2015/01/01 5:57:18 にビルドを開始しました。
+=======
+﻿2015/01/01 5:13:22 にビルドを開始しました。
+>>>>>>> origin/master
      1>ノード 2 上のプロジェクト "D:\3Dshooting\3Dshooting\3Dshooting\3Dshooting.vcxproj" (Build ターゲット)。
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ID:\3Dshooting\3Dshooting\\DXlib /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Barrage.cpp Bullet.cpp Camera.cpp Character.cpp Debug.cpp Enemy.cpp Game.cpp Main.cpp Player.cpp
          Player.cpp
+<<<<<<< HEAD
      1>d:\3dshooting\3dshooting\3dshooting\enemy.h(7): error C2504: 'Character' : 定義されていない基底クラスが宣言されています。
      1>d:\3dshooting\3dshooting\3dshooting\enemy.h(16): error C2143: 構文エラー : ';' が '*' の前にありません。
      1>d:\3dshooting\3dshooting\3dshooting\enemy.h(16): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
@@ -33,6 +38,34 @@
      1>d:\3dshooting\3dshooting\3dshooting\enemy.h(20): error C3668: 'Enemy::Draw' : オーバーライド指定子 'override' を伴うメソッドは、基底クラス メソッドをオーバーライドしませんでした
      1>d:\3dshooting\3dshooting\3dshooting\enemy.h(24): error C3668: 'Enemy::GetBulletObj' : オーバーライド指定子 'override' を伴うメソッドは、基底クラス メソッドをオーバーライドしませんでした
      1>d:\3dshooting\3dshooting\3dshooting\bullet.h(36): error C2061: 構文エラー : 識別子 'Player'
+=======
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(6): error C2504: 'Character' : 定義されていない基底クラスが宣言されています。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(15): error C2143: 構文エラー : ';' が '*' の前にありません。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(15): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(23): error C2143: 構文エラー : ';' が '*' の前にありません。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(23): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(23): warning C4183: 'GetBulletObj': 戻り値の型がありません。'int' を返すメンバー関数とみなします。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(19): error C3668: 'Enemy::Draw' : オーバーライド指定子 'override' を伴うメソッドは、基底クラス メソッドをオーバーライドしませんでした
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(23): error C3668: 'Enemy::GetBulletObj' : オーバーライド指定子 'override' を伴うメソッドは、基底クラス メソッドをオーバーライドしませんでした
+         Main.cpp
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(6): error C2504: 'Character' : 定義されていない基底クラスが宣言されています。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(15): error C2143: 構文エラー : ';' が '*' の前にありません。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(15): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(23): error C2143: 構文エラー : ';' が '*' の前にありません。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(23): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(23): warning C4183: 'GetBulletObj': 戻り値の型がありません。'int' を返すメンバー関数とみなします。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(19): error C3668: 'Enemy::Draw' : オーバーライド指定子 'override' を伴うメソッドは、基底クラス メソッドをオーバーライドしませんでした
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(23): error C3668: 'Enemy::GetBulletObj' : オーバーライド指定子 'override' を伴うメソッドは、基底クラス メソッドをオーバーライドしませんでした
+         Game.cpp
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(6): error C2504: 'Character' : 定義されていない基底クラスが宣言されています。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(15): error C2143: 構文エラー : ';' が '*' の前にありません。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(15): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(23): error C2143: 構文エラー : ';' が '*' の前にありません。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(23): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(23): warning C4183: 'GetBulletObj': 戻り値の型がありません。'int' を返すメンバー関数とみなします。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(19): error C3668: 'Enemy::Draw' : オーバーライド指定子 'override' を伴うメソッドは、基底クラス メソッドをオーバーライドしませんでした
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(23): error C3668: 'Enemy::GetBulletObj' : オーバーライド指定子 'override' を伴うメソッドは、基底クラス メソッドをオーバーライドしませんでした
+>>>>>>> origin/master
      1>d:\3dshooting\3dshooting\3dshooting\game.cpp(56): error C2039: 'vector' : 'Enemy' のメンバーではありません。
                  d:\3dshooting\3dshooting\3dshooting\enemy.h(5) : 'Enemy' の宣言を確認してください。
      1>d:\3dshooting\3dshooting\3dshooting\game.cpp(56): error C2660: 'Player::MotionHandler' : 関数に 2 個の引数を指定できません。
@@ -58,6 +91,7 @@
      1>d:\3dshooting\3dshooting\3dshooting\player.h(19): error C2143: 構文エラー : ';' が '*' の前にありません。
      1>d:\3dshooting\3dshooting\3dshooting\player.h(19): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
      1>d:\3dshooting\3dshooting\3dshooting\player.h(19): warning C4183: 'GetBulletObj': 戻り値の型がありません。'int' を返すメンバー関数とみなします。
+<<<<<<< HEAD
      1>d:\3dshooting\3dshooting\3dshooting\player.h(19): error C3668: 'Player::GetBulletObj' : オーバーライド指定子 'override' を伴うメソッドは、基底クラス メソッドをオーバーライドしませんでした
      1>d:\3dshooting\3dshooting\3dshooting\enemy.cpp(33): warning C4244: '=' : 'int' から 'float' への変換です。データが失われる可能性があります。
          Debug.cpp
@@ -74,6 +108,59 @@
      1>d:\3dshooting\3dshooting\3dshooting\enemy.h(20): error C3668: 'Enemy::Draw' : オーバーライド指定子 'override' を伴うメソッドは、基底クラス メソッドをオーバーライドしませんでした
      1>d:\3dshooting\3dshooting\3dshooting\enemy.h(24): error C3668: 'Enemy::GetBulletObj' : オーバーライド指定子 'override' を伴うメソッドは、基底クラス メソッドをオーバーライドしませんでした
      1>d:\3dshooting\3dshooting\3dshooting\bullet.h(36): error C2061: 構文エラー : 識別子 'Player'
+=======
+     1>d:\3dshooting\3dshooting\3dshooting\player.h(17): error C3668: 'Player::Draw' : オーバーライド指定子 'override' を伴うメソッドは、基底クラス メソッドをオーバーライドしませんでした
+     1>d:\3dshooting\3dshooting\3dshooting\player.h(19): error C3668: 'Player::GetBulletObj' : オーバーライド指定子 'override' を伴うメソッドは、基底クラス メソッドをオーバーライドしませんでした
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.cpp(33): warning C4244: '=' : 'int' から 'float' への変換です。データが失われる可能性があります。
+         Debug.cpp
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(6): error C2504: 'Character' : 定義されていない基底クラスが宣言されています。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(15): error C2143: 構文エラー : ';' が '*' の前にありません。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(15): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(23): error C2143: 構文エラー : ';' が '*' の前にありません。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(23): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(23): warning C4183: 'GetBulletObj': 戻り値の型がありません。'int' を返すメンバー関数とみなします。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(19): error C3668: 'Enemy::Draw' : オーバーライド指定子 'override' を伴うメソッドは、基底クラス メソッドをオーバーライドしませんでした
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(23): error C3668: 'Enemy::GetBulletObj' : オーバーライド指定子 'override' を伴うメソッドは、基底クラス メソッドをオーバーライドしませんでした
+     1>d:\3dshooting\3dshooting\3dshooting\debug.cpp(42): error C2039: 'vector' : 'Enemy' のメンバーではありません。
+                 d:\3dshooting\3dshooting\3dshooting\enemy.h(5) : 'Enemy' の宣言を確認してください。
+     1>d:\3dshooting\3dshooting\3dshooting\debug.cpp(42): error C2228: '.x' の左側はクラス、構造体、共用体でなければなりません
+     1>d:\3dshooting\3dshooting\3dshooting\debug.cpp(43): error C2039: 'vector' : 'Enemy' のメンバーではありません。
+                 d:\3dshooting\3dshooting\3dshooting\enemy.h(5) : 'Enemy' の宣言を確認してください。
+     1>d:\3dshooting\3dshooting\3dshooting\debug.cpp(43): error C2228: '.y' の左側はクラス、構造体、共用体でなければなりません
+     1>d:\3dshooting\3dshooting\3dshooting\debug.cpp(44): error C2039: 'vector' : 'Enemy' のメンバーではありません。
+                 d:\3dshooting\3dshooting\3dshooting\enemy.h(5) : 'Enemy' の宣言を確認してください。
+     1>d:\3dshooting\3dshooting\3dshooting\debug.cpp(44): error C2228: '.z' の左側はクラス、構造体、共用体でなければなりません
+     1>d:\3dshooting\3dshooting\3dshooting\debug.cpp(47): error C2039: 'GetHp' : 'Enemy' のメンバーではありません。
+                 d:\3dshooting\3dshooting\3dshooting\enemy.h(5) : 'Enemy' の宣言を確認してください。
+     1>d:\3dshooting\3dshooting\3dshooting\debug.cpp(48): error C2039: 'GetMp' : 'Enemy' のメンバーではありません。
+                 d:\3dshooting\3dshooting\3dshooting\enemy.h(5) : 'Enemy' の宣言を確認してください。
+         Character.cpp
+     1>d:\3dshooting\3dshooting\3dshooting\player.h(6): error C2504: 'Character' : 定義されていない基底クラスが宣言されています。
+     1>d:\3dshooting\3dshooting\3dshooting\player.h(13): error C2143: 構文エラー : ';' が '*' の前にありません。
+     1>d:\3dshooting\3dshooting\3dshooting\player.h(13): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+     1>d:\3dshooting\3dshooting\3dshooting\player.h(19): error C2143: 構文エラー : ';' が '*' の前にありません。
+     1>d:\3dshooting\3dshooting\3dshooting\player.h(19): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+     1>d:\3dshooting\3dshooting\3dshooting\player.h(19): warning C4183: 'GetBulletObj': 戻り値の型がありません。'int' を返すメンバー関数とみなします。
+     1>d:\3dshooting\3dshooting\3dshooting\player.h(17): error C3668: 'Player::Draw' : オーバーライド指定子 'override' を伴うメソッドは、基底クラス メソッドをオーバーライドしませんでした
+     1>d:\3dshooting\3dshooting\3dshooting\player.h(19): error C3668: 'Player::GetBulletObj' : オーバーライド指定子 'override' を伴うメソッドは、基底クラス メソッドをオーバーライドしませんでした
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(6): error C2504: 'Character' : 定義されていない基底クラスが宣言されています。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(15): error C2143: 構文エラー : ';' が '*' の前にありません。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(15): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(23): error C2143: 構文エラー : ';' が '*' の前にありません。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(23): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(23): warning C4183: 'GetBulletObj': 戻り値の型がありません。'int' を返すメンバー関数とみなします。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(19): error C3668: 'Enemy::Draw' : オーバーライド指定子 'override' を伴うメソッドは、基底クラス メソッドをオーバーライドしませんでした
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(23): error C3668: 'Enemy::GetBulletObj' : オーバーライド指定子 'override' を伴うメソッドは、基底クラス メソッドをオーバーライドしませんでした
+         Camera.cpp
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(6): error C2504: 'Character' : 定義されていない基底クラスが宣言されています。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(15): error C2143: 構文エラー : ';' が '*' の前にありません。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(15): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(23): error C2143: 構文エラー : ';' が '*' の前にありません。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(23): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(23): warning C4183: 'GetBulletObj': 戻り値の型がありません。'int' を返すメンバー関数とみなします。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(19): error C3668: 'Enemy::Draw' : オーバーライド指定子 'override' を伴うメソッドは、基底クラス メソッドをオーバーライドしませんでした
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(23): error C3668: 'Enemy::GetBulletObj' : オーバーライド指定子 'override' を伴うメソッドは、基底クラス メソッドをオーバーライドしませんでした
+>>>>>>> origin/master
          Bullet.cpp
      1>d:\3dshooting\3dshooting\3dshooting\character.h(35): error C2143: 構文エラー : ';' が '*' の前にありません。
      1>d:\3dshooting\3dshooting\3dshooting\character.h(35): error C2433: 'Character::Bullet' : 'virtual' はデータ宣言をするのに使用できません。
@@ -86,12 +173,21 @@
      1>d:\3dshooting\3dshooting\3dshooting\player.h(19): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
      1>d:\3dshooting\3dshooting\3dshooting\player.h(19): warning C4183: 'GetBulletObj': 戻り値の型がありません。'int' を返すメンバー関数とみなします。
      1>d:\3dshooting\3dshooting\3dshooting\player.h(19): error C3668: 'Player::GetBulletObj' : オーバーライド指定子 'override' を伴うメソッドは、基底クラス メソッドをオーバーライドしませんでした
+<<<<<<< HEAD
      1>d:\3dshooting\3dshooting\3dshooting\enemy.h(16): error C2143: 構文エラー : ';' が '*' の前にありません。
      1>d:\3dshooting\3dshooting\3dshooting\enemy.h(16): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
      1>d:\3dshooting\3dshooting\3dshooting\enemy.h(24): error C2143: 構文エラー : ';' が '*' の前にありません。
      1>d:\3dshooting\3dshooting\3dshooting\enemy.h(24): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
      1>d:\3dshooting\3dshooting\3dshooting\enemy.h(24): warning C4183: 'GetBulletObj': 戻り値の型がありません。'int' を返すメンバー関数とみなします。
      1>d:\3dshooting\3dshooting\3dshooting\enemy.h(24): error C3668: 'Enemy::GetBulletObj' : オーバーライド指定子 'override' を伴うメソッドは、基底クラス メソッドをオーバーライドしませんでした
+=======
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(15): error C2143: 構文エラー : ';' が '*' の前にありません。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(15): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(23): error C2143: 構文エラー : ';' が '*' の前にありません。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(23): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(23): warning C4183: 'GetBulletObj': 戻り値の型がありません。'int' を返すメンバー関数とみなします。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(23): error C3668: 'Enemy::GetBulletObj' : オーバーライド指定子 'override' を伴うメソッドは、基底クラス メソッドをオーバーライドしませんでした
+>>>>>>> origin/master
          Barrage.cpp
      1>d:\3dshooting\3dshooting\3dshooting\character.h(35): error C2143: 構文エラー : ';' が '*' の前にありません。
      1>d:\3dshooting\3dshooting\3dshooting\character.h(35): error C2433: 'Character::Bullet' : 'virtual' はデータ宣言をするのに使用できません。
@@ -104,6 +200,7 @@
      1>d:\3dshooting\3dshooting\3dshooting\player.h(19): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
      1>d:\3dshooting\3dshooting\3dshooting\player.h(19): warning C4183: 'GetBulletObj': 戻り値の型がありません。'int' を返すメンバー関数とみなします。
      1>d:\3dshooting\3dshooting\3dshooting\player.h(19): error C3668: 'Player::GetBulletObj' : オーバーライド指定子 'override' を伴うメソッドは、基底クラス メソッドをオーバーライドしませんでした
+<<<<<<< HEAD
      1>d:\3dshooting\3dshooting\3dshooting\enemy.h(16): error C2143: 構文エラー : ';' が '*' の前にありません。
      1>d:\3dshooting\3dshooting\3dshooting\enemy.h(16): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
      1>d:\3dshooting\3dshooting\3dshooting\enemy.h(24): error C2143: 構文エラー : ';' が '*' の前にありません。
@@ -154,3 +251,17 @@
 =======
 経過時間 00:00:02.71
 >>>>>>> origin/修正
+=======
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(15): error C2143: 構文エラー : ';' が '*' の前にありません。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(15): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(23): error C2143: 構文エラー : ';' が '*' の前にありません。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(23): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(23): warning C4183: 'GetBulletObj': 戻り値の型がありません。'int' を返すメンバー関数とみなします。
+     1>d:\3dshooting\3dshooting\3dshooting\enemy.h(23): error C3668: 'Enemy::GetBulletObj' : オーバーライド指定子 'override' を伴うメソッドは、基底クラス メソッドをオーバーライドしませんでした
+         コードを生成中...
+     1>プロジェクト "D:\3Dshooting\3Dshooting\3Dshooting\3Dshooting.vcxproj" (Build ターゲット) のビルドが終了しました -- 失敗。
+
+ビルドに失敗しました。
+
+経過時間 00:00:04.39
+>>>>>>> origin/master

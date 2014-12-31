@@ -38,7 +38,7 @@ Player::Player(float x, float y, float z, int hp,int mp) :Character(x,y,z,hp,mp)
 
 Player::~Player()
 {
-	
+	delete plBullet;
 }
 
 void Player::Move(Player* player,VECTOR enemyVector,int isShot)
