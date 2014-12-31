@@ -115,7 +115,6 @@ void Bullet::Collision(Player* player)
 	}
 }
 
-/*
 void Bullet::Collision(Enemy* enemy)
 {
 	for (l = 0; l < BULLET; l++)
@@ -136,26 +135,7 @@ void Bullet::Collision(Enemy* enemy)
 					isGraze[l] = 1;
 					enemy->AddMp(10);
 				}
-=======
-	move[i] = VGet(bulletSpeed*direction[i].x, bulletSpeed*direction[i].y, bulletSpeed*direction[i].z);
-}
-
-/*
-void Bullet::Collision(Player* player)
-{
-	for (l = 0; l < BULLET;l++)
-	{
-		if (bullet[l] == 1)
-		{
-			colVector = VSub(character->vector, bulletLocation[l]);
-			distVector = (colVector.x * colVector.x + colVector.y * colVector.y + colVector.z * colVector.z);
-			if (isGraze[l] == 0)
-			{
-				character.AddMP(10);
->>>>>>> origin/master
 			}
 		}
 	}
 }
-<<<<<<< HEAD
-*/

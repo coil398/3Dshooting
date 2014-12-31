@@ -34,10 +34,8 @@ public:
 	void Calculator(int i, VECTOR start, VECTOR target);
 	void Draw();
 	void ShotController(VECTOR start, VECTOR target);
-	//void Collision(Player* player); //コリジョン判定
-	//void Collision(Enemy* enemy); //コリジョン判定
 	int IsShot();
 	void Collision(Player* player);
-	//void Collision(Enemy* enemy);
+	void Collision(Enemy* enemy);
 };
 
