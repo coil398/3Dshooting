@@ -62,10 +62,7 @@ void Bullet::Shot(VECTOR start, VECTOR target)
 			{
 				//使用されていないバレット配列のフラグをたてていく
 				bullet[i] = 1;
-<<<<<<< HEAD
 				isCol[i] = 0;
-=======
->>>>>>> origin/master
 				isGraze[i] = 0;
 				Calculator(i, start, target);
 				isShot = 0;
@@ -90,9 +87,7 @@ void Bullet::Calculator(int i,VECTOR start,VECTOR target)
 	//方向ベクトルを正規化
 	direction[i] = VNorm(direction[i]);
 	//１処理ごとの移動ベクトル
-<<<<<<< HEAD
-<<<<<<< HEAD
-	Move[i] = VGet(bulletSpeed*direction[i].x, bulletSpeed*direction[i].y, bulletSpeed*direction[i].z);
+	move[i] = VGet(bulletSpeed*direction[i].x, bulletSpeed*direction[i].y, bulletSpeed*direction[i].z);
 }
 
 void Bullet::Collision(Player* player)
@@ -164,10 +159,3 @@ void Bullet::Collision(Player* player)
 }
 <<<<<<< HEAD
 */
-=======
-	move[i] = VGet(bulletSpeed*direction[i].x, bulletSpeed*direction[i].y, bulletSpeed*direction[i].z);
-}
->>>>>>> origin/菫ｮ豁｣
-=======
-*/
->>>>>>> origin/master
