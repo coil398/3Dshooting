@@ -2,8 +2,7 @@
 #include "Character.h"
 #include "Bullet.h"
 
-class Enemy :
-	public Character
+class Enemy :public Character
 {
 private:
 	int EnemyModelHandle; //モデルデータのハンドルを格納
