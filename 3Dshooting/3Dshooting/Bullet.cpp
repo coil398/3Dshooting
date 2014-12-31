@@ -64,6 +64,8 @@ void Bullet::Shot(VECTOR start, VECTOR target)
 			{
 				//使用されていないバレット配列のフラグをたてていく
 				bullet[i] = 1;
+				isCol[i] = 0;
+				isGraze[i] = 0;
 				Calculator(i, start, target);
 				isShot = 0;
 			}
@@ -89,3 +91,55 @@ void Bullet::Calculator(int i,VECTOR start,VECTOR target)
 	//１処理ごとの移動ベクトル
 	Move[i] = VGet(bulletSpeed*direction[i].x, bulletSpeed*direction[i].y, bulletSpeed*direction[i].z);
 }
+
+void Bullet::Collision(Player* player)
+{
+	for (l = 0; l < BULLET; l++)
+	{
+		colVector = VSub(player->vector, bulletLocation[l]);
+		distVector = colVector.x * colVector.x + colVector.y * colVector.y + colVector.z * colVector.z;
+		if (isCol[l] == 0)
+		{
+			if (distVector < 100.0f)
+			{
+				isCol[l] = 1;
+				player->AddHp(-10);
+			}
+			else if (isGraze[l] == 0)
+			{
+				if (distVector < 250.0f)
+				{
+					isGraze[l] = 1;
+					player->AddMp(10);
+				}
+			}
+		}
+	}
+}
+
+/*
+void Bullet::Collision(Enemy* enemy)
+{
+	for (l = 0; l < BULLET; l++)
+	{
+		colVector = VSub(enemy->vector, bulletLocation[l]);
+		distVector = colVector.x * colVector.x + colVector.y * colVector.y + colVector.z * colVector.z;
+		if (isCol[l] == 0)
+		{
+			if (distVector < 100.0f)
+			{
+				isCol[l] = 1;
+				enemy->AddHp(-10);
+			}
+			else if (isGraze[l] == 0)
+			{
+				if (distVector < 250.0f)
+				{
+					isGraze[l] = 1;
+					enemy->AddMp(10);
+				}
+			}
+		}
+	}
+}
+*/

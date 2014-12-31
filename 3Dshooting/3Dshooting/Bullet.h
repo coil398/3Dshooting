@@ -1,5 +1,7 @@
 #pragma once
 #include <dxlib.h>
+#include "Player.h"
+#include "Enemy.h"
 #define BULLET 100 //弾の限界数
 
 
@@ -9,15 +11,19 @@ class Bullet
 private:
 	int key;
 	int bullet[BULLET];
-	int i, j,k;
+	int i, j, k, l;
 	int isShot; //弾が撃てるかどうか
+	int isGraze[BULLET]; //グレイズ判定
+	int isCol[BULLET]; //コリジョン判定
 	//バレットの速さ
 	float bulletSpeed;
+	float distVector; //ベクトルのノルム(２乗で使用)
 	VECTOR direction[BULLET];
 	VECTOR xAxis; //x軸方向ベクトル
 	VECTOR yAxis; //y軸方向ベクトル
 	VECTOR Move[BULLET]; //弾の座標に足していくベクトル
 	VECTOR bulletLocation[BULLET]; //弾の位置
+	VECTOR colVector; //コリジョン判定のためのベクトル
 public:
 	int bulletImage[5];
 	Bullet();
@@ -27,5 +33,7 @@ public:
 	void Draw();
 	void ShotController(VECTOR start, VECTOR target);
 	int IsShot();
+	void Collision(Player* player);
+	//void Collision(Enemy* enemy);
 };
 
