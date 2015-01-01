@@ -5,6 +5,7 @@
 #include <DxLib.h>
 #include "Game.h"
 
+
 Player::Player(float x, float y, float z, int hp,int mp) :Character(x,y,z,hp,mp)
 {
 	//3Dモデル読み込み
@@ -34,6 +35,7 @@ Player::Player(float x, float y, float z, int hp,int mp) :Character(x,y,z,hp,mp)
 	plBullet = new Bullet();
 
 	zLocation = 1;
+	dashCounter - 0;
 
 	return;
 }
@@ -45,6 +47,7 @@ Player::~Player()
 
 void Player::Move(Player* player,VECTOR enemyVector,int isShot)
 {
+	dashCounter++;
 	//キー取得  
 	int key = GetJoypadInputState(DX_INPUT_KEY_PAD1);
 
@@ -66,6 +69,49 @@ void Player::Move(Player* player,VECTOR enemyVector,int isShot)
 		{
 			if (key & PAD_INPUT_RIGHT) player->vector.x -= 5.0f;
 		}
+		if (dashCounter > 300)
+		{
+			if (key & PAD_INPUT_4)
+			{
+				if (key & PAD_INPUT_DOWN)
+				{
+					AddMp(-10);
+					dashCounter = 0;
+					if (vector.y > 180)
+						vector.y -= 150.0f;
+					else
+						vector.y = 30.0f;
+				}
+				if (key & PAD_INPUT_UP)
+				{
+					AddMp(-10);
+					dashCounter = 0;
+					if (vector.y < 50)
+						vector.y += 150.0f;
+					else
+						vector.y = 200.0f;
+				}
+				if (key & PAD_INPUT_LEFT)
+				{
+					AddMp(-10);
+					dashCounter = 0;
+					if (vector.x < 150)
+						vector.x += 150.0f;
+					else
+						vector.x = 300.0f;
+				}
+				if (key & PAD_INPUT_RIGHT)
+				{
+					AddMp(-10);
+					dashCounter = 0;
+					if (vector.x > 30)
+						vector.x -= 150.0f;
+					else
+						vector.x = -120.0f;
+				}
+			}
+		}
+		/*
 		if (zLocation == 1)
 		{
 			if (key & PAD_INPUT_5)
@@ -82,6 +128,7 @@ void Player::Move(Player* player,VECTOR enemyVector,int isShot)
 				zLocation = 1;
 			}
 		}
+		*/
 
 	}
 
@@ -89,6 +136,7 @@ void Player::Move(Player* player,VECTOR enemyVector,int isShot)
 	theta = atan((player->vector.x - enemyVector.x) / 200.0f);
 	phi = atan((player->vector.y - enemyVector.y) / (200.0f / cos(theta)));
 
+	//モデルの回転
 	MV1SetRotationXYZ(PlayerModelHandle, VGet(-phi, theta, 0));
 
 	//3Dモデルの移動
@@ -109,6 +157,9 @@ void Player::Draw()
 	//プレイヤーMPの描画
 	DrawBox(300, 850, 300 + 2 * GetMp(), 900, GetColor(0, 36, 255), TRUE);
 	DrawFormatString(300, 900, GetColor(255, 255, 255), "MP");
+
+	if (dashCounter>300)
+		DrawFormatString(50, 920, GetColor(255, 255, 255), "ダッシュ可能");
 }
 
 void Player::MotionHandler(Player* player, VECTOR enemyVector, int isShot)
@@ -116,7 +167,7 @@ void Player::MotionHandler(Player* player, VECTOR enemyVector, int isShot)
 	Move(player, enemyVector, isShot);
 	//アニメーションさせたかった
 
-	if (Game::counter%10==0)
+	if (counter%10==0)
 	{
 		if (GetMp()<100)
 		{

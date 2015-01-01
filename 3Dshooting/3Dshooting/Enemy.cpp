@@ -4,6 +4,7 @@
 #include <math.h>
 #include "Game.h"
 
+
 Enemy::Enemy(float x, float y, float z,int hp,int mp) :Character(x, y, z,hp,mp)
 {
 	//エネミーのモデルデータ読み込み
@@ -63,7 +64,7 @@ void Enemy::MotionHandler(VECTOR playerVector, Enemy* enemy,int isShot)
 {
 	Move(playerVector, enemy, isShot);
 
-	if (Game::counter % 10 == 0)
+	if (counter % 10 == 0)
 	{
 		if (GetMp()<100)
 		{

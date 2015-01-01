@@ -23,6 +23,7 @@ protected:
 	int motionNumber; //再生しているモーションの番号
 	float time;
 	float colorCode;
+	VECTOR colVector; //当たり判定用のベクトル
 public:
 	Character(float x,float y,float z,int hp,int mp);
 	~Character();

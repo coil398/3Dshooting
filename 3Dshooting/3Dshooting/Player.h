@@ -12,6 +12,7 @@ private:
 	int i; //デバッグ用
 	Bullet* plBullet;
 	int zLocation;
+	int dashCounter;
 public:
 	Player(float x,float y,float z,int hp,int mp);
 	void Move(Player* player,VECTOR enemyVector,int isShot);
@@ -19,4 +20,5 @@ public:
 	void MotionHandler(Player* player, VECTOR enemyVector, int isShot);
 	Bullet* GetBulletObj()override;
 	~Player();
+	void SetColVector();
 };

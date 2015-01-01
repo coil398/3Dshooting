@@ -7,15 +7,15 @@
 #include "CheckKeyh.h"
 #include "Bullet.h"
 
-int Game::counter = 0;
-int Game::debugger = 0;
+int counter = 0;
+int debugger = 0;
 
 Game::Game()
 {
 	//プレイヤー作成xyzHP
 	player = new Player(0.0f, 50.0f, 0.0f, 100, 100);
 	//エネミー作成xyzHP
-	enemy = new Enemy(0.0f, 50.0f, -200.0f, 1500, 500);
+	enemy = new Enemy(0.0f, 50.0f, -200.0f, 500, 500);
 	//ステージのオブジェクト
 	stage = new BackGround();
 	//弾オブジェクト
@@ -43,7 +43,7 @@ Game::~Game()
 //ゲーム実行
 void Game::Run()
 {
-	Game::counter++;
+	counter++;
 
 	if (CheckKey::Key[KEY_INPUT_F3]==1)
 	{
@@ -59,10 +59,12 @@ void Game::Run()
 	enemy->MotionHandler(player->vector, enemy, enemy->GetBulletObj()->IsShot());
 
 	//プレイヤー弾の処理Todo
-	player->GetBulletObj()->Shot(player->vector, enemy->vector, player);
+	player->GetBulletObj()->Shot(VGet(player->vector.x, player->vector.y + 40.0f, player->vector.z), VGet(enemy->vector.x, enemy->vector.y + 40.0f, enemy->vector.z), player);
+	player->GetBulletObj()->Collision(enemy);
 
 	//エネミー弾の処理Todo
-	enemy->GetBulletObj()->Shot(enemy->vector, player->vector,enemy);
+	enemy->GetBulletObj()->Shot(VGet(enemy->vector.x, enemy->vector.y + 40.0f, enemy->vector.z),VGet(player->vector.x, player->vector.y + 40.0f, player->vector.z), enemy);
+	enemy->GetBulletObj()->Collision(player);
 
 	//カメラの位置更新
 	camera->Move(player->vector, enemy->vector);

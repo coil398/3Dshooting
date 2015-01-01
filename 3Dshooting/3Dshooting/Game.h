@@ -6,6 +6,9 @@
 #include "BackGround.h"
 #include "Bullet.h"
 
+extern int debugger; //デバッグのフラグ
+extern int counter;
+
 class Game
 {
 private:
@@ -29,7 +32,5 @@ public:
 	~Game();
 	void Input();
 	void Run();
-	static int debugger; //デバッグのフラグ
-	static int counter;
 };
 
