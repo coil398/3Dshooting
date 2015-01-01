@@ -69,7 +69,6 @@ void Enemy::MotionHandler(VECTOR playerVector, Enemy* enemy,int isShot)
 		{
 			AddMp(1);
 		}
-		AddHp(-10);
 	}
 
 	//アニメーション処理

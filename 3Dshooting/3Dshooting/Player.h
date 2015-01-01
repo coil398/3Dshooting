@@ -11,6 +11,7 @@ private:
 	float dotWidth;
 	int i; //デバッグ用
 	Bullet* plBullet;
+	int zLocation;
 public:
 	Player(float x,float y,float z,int hp,int mp);
 	void Move(Player* player,VECTOR enemyVector,int isShot);

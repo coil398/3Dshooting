@@ -1,5 +1,6 @@
 #include "Bullet.h"
 #include "Character.h"
+#include "Player.h"
 
 Bullet::Bullet()
 {
@@ -48,7 +49,7 @@ int Bullet::IsShot()
 	return isShot;
 }
 
-void Bullet::Shot(VECTOR start, VECTOR target,Character* character)
+void Bullet::Shot(VECTOR start, VECTOR target,Player* player)
 {
 	isShot++;
 
@@ -57,6 +58,34 @@ void Bullet::Shot(VECTOR start, VECTOR target,Character* character)
 	if (isShot >= 10)
 	{
 
+		NormalShot(start,target,player);
+	}
+
+	ShotController(start, target);
+}
+
+void Bullet::Shot(VECTOR start, VECTOR target, Enemy* enemy)
+{
+	//Todo
+}
+
+//ある位置からある位置への移動ベクトルを求める関数
+void Bullet::Calculator(int i,VECTOR start,VECTOR target)
+{
+	//弾の位置をセット
+	bulletLocation[i] = VGet(start.x, start.y + 45.0f, start.z);
+	//現在地からターゲットへの方向ベクトル
+	direction[i] = VGet(target.x - start.x, target.y - start.y, target.z - start.z);
+	//方向ベクトルを正規化
+	direction[i] = VNorm(direction[i]);
+	//１処理ごとの移動ベクトル
+	move[i] = VGet(bulletSpeed*direction[i].x, bulletSpeed*direction[i].y, bulletSpeed*direction[i].z);
+}
+
+void Bullet::NormalShot(VECTOR start,VECTOR target,Character* character)
+{
+	if (character->GetMp()>5)
+	{
 		if (key & PAD_INPUT_1)
 		{
 			if (bullet[i] == 0)
@@ -67,7 +96,7 @@ void Bullet::Shot(VECTOR start, VECTOR target,Character* character)
 				isGraze[i] = 0;
 				Calculator(i, start, target);
 				isShot = 0;
-				character->AddMp(-2);
+				character->AddMp(-5);
 			}
 			i++;
 			if (i == BULLET - 1)
@@ -76,19 +105,4 @@ void Bullet::Shot(VECTOR start, VECTOR target,Character* character)
 			}
 		}
 	}
-
-	ShotController(start, target);
 }
-
-void Bullet::Calculator(int i,VECTOR start,VECTOR target)
-{
-	//弾の位置をセット
-	bulletLocation[i] = VGet(start.x, start.y + 45.0f, start.z);
-	//プレイヤーからエネミーへの方向ベクトル
-	direction[i] = VGet(target.x - start.x, target.y - start.y, target.z - start.z);
-	//方向ベクトルを正規化
-	direction[i] = VNorm(direction[i]);
-	//１処理ごとの移動ベクトル
-	move[i] = VGet(bulletSpeed*direction[i].x, bulletSpeed*direction[i].y, bulletSpeed*direction[i].z);
-}
-

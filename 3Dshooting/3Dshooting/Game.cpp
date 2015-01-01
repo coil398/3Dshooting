@@ -13,7 +13,7 @@ int Game::debugger = 0;
 Game::Game()
 {
 	//プレイヤー作成xyzHP
-	player = new Player(0.0f, 50.0f, 0.0f, 100, 50);
+	player = new Player(0.0f, 50.0f, 0.0f, 100, 100);
 	//エネミー作成xyzHP
 	enemy = new Enemy(0.0f, 50.0f, -200.0f, 1500, 500);
 	//ステージのオブジェクト
@@ -62,7 +62,7 @@ void Game::Run()
 	player->GetBulletObj()->Shot(player->vector, enemy->vector, player);
 
 	//エネミー弾の処理Todo
-	enemy->GetBulletObj()->Shot(player->vector, enemy->vector,enemy);
+	enemy->GetBulletObj()->Shot(enemy->vector, player->vector,enemy);
 
 	//カメラの位置更新
 	camera->Move(player->vector, enemy->vector);

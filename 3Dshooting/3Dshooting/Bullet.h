@@ -2,6 +2,8 @@
 #include <dxlib.h>
 #define BULLET 100 //弾の限界数
 
+class Player;
+class Enemy;
 class Character;
 
 //もしかしたらインデクサ使ったほうがいいかもしれない？
@@ -9,11 +11,12 @@ class Bullet
 {
 private:
 	int key;
-	int bullet[BULLET];
+	int bullet[BULLET]; //弾を格納（０：未発　１：通常弾　２：ホーミング弾）
 	int i, j, k, l;
 	int isShot; //弾が撃てるかどうか
 	int isGraze[BULLET]; //グレイズ判定
 	int isCol[BULLET]; //コリジョン判定
+	int mp;
 	//バレットの速さ
 	float bulletSpeed;
 	float distVector; //ベクトルのノルム(２乗で使用)
@@ -27,10 +30,12 @@ public:
 	int bulletImage[5];
 	Bullet();
 	~Bullet();
-	void Shot(VECTOR start, VECTOR target,Character* character);
+	void Shot(VECTOR start, VECTOR target,Player* character);
+	void Shot(VECTOR start, VECTOR target, Enemy* character);
 	void Calculator(int i, VECTOR start, VECTOR target);
 	void Draw();
 	void ShotController(VECTOR start, VECTOR target);
 	int IsShot();
+	void NormalShot(VECTOR start,VECTOR target,Character* character);
 };
 

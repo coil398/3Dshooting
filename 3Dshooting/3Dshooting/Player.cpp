@@ -33,6 +33,8 @@ Player::Player(float x, float y, float z, int hp,int mp) :Character(x,y,z,hp,mp)
 
 	plBullet = new Bullet();
 
+	zLocation = 1;
+
 	return;
 }
 
@@ -64,6 +66,23 @@ void Player::Move(Player* player,VECTOR enemyVector,int isShot)
 		{
 			if (key & PAD_INPUT_RIGHT) player->vector.x -= 5.0f;
 		}
+		if (zLocation == 1)
+		{
+			if (key & PAD_INPUT_5)
+			{
+				player->vector.z += 50.0f;
+				zLocation = 0;
+			}
+		}
+		if (zLocation == 0)
+		{
+			if (key & PAD_INPUT_8)
+			{
+				player->vector.z -= 50.0f;
+				zLocation = 1;
+			}
+		}
+
 	}
 
 
