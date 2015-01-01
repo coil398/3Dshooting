@@ -39,6 +39,8 @@ public:
 	void NormalShot(VECTOR start, VECTOR target, Enemy* enemy);
 	void HomingShot(VECTOR start, VECTOR target, Player* player);
 	void HomingShot(VECTOR start, VECTOR target, Enemy* enemy);
+	void SuperShot(VECTOR start, VECTOR target, Player* player);
+	void SuperShot(VECTOR start, VECTOR target, Enemy* enemy);
 	void Collision(Character* character);
 };
 

@@ -90,4 +90,9 @@ void Game::Run()
 		//デバッグ情報表示
 		debug->Draw(*player,*enemy);
 	}
+
+	if (player->GetHp() < 0 | enemy->GetHp() < 0)
+	{
+		return;
+	}
 }

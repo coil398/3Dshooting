@@ -28,6 +28,10 @@ void Bullet::Draw()
 		{
 			DrawBillboard3D(bulletLocation[k], 0.5f, 0.5f, 10.0f, 0.0f, bulletImage[1], TRUE);
 		}
+		if (bullet[k] == 3)
+		{
+			DrawBillboard3D(bulletLocation[k], 0.5f, 0.5f, 10.0f, 0.0f, bulletImage[2], TRUE);
+		}
 	}
 }
 
@@ -46,14 +50,9 @@ void Bullet::ShotController(VECTOR start,VECTOR target)
 
 	for (j = 0; j < BULLET;j++)
 	{
-		if (bullet[j]==1)
+		if (bullet[j]==1 | bullet[j]==2 | bullet[j]==3)
 		{
 			//現在位置のベクトルに移動ベクトルを加算
-			bulletLocation[j] = VAdd(bulletLocation[j], move[j]);
-		}
-
-		if (bullet[j] == 2)
-		{
 			bulletLocation[j] = VAdd(bulletLocation[j], move[j]);
 		}
 
@@ -79,6 +78,7 @@ void Bullet::Shot(VECTOR start, VECTOR target,Player* player)
 	{
 		NormalShot(start, target, player);
 		HomingShot(start, target, player);
+		SuperShot(start, target, player);
 	}
 
 	ShotController(start, target);
@@ -87,11 +87,12 @@ void Bullet::Shot(VECTOR start, VECTOR target,Player* player)
 
 void Bullet::Shot(VECTOR start, VECTOR target, Enemy* enemy)
 {
-	enFlag = 2;
+	enFlag = 3;
 	if (counter % 10 == 0)
 	{
 		NormalShot(start, target,enemy);
 		HomingShot(start, target, enemy);
+		SuperShot(start, target, enemy);
 	}
 
 	ShotController(start, target);
@@ -123,7 +124,7 @@ void Bullet::NormalShot(VECTOR start,VECTOR target,Player* player)
 				bullet[i] = 1;
 				isGraze[i] = 0;
 				Calculator(i, start, target);
-				isShot = 0;
+				isShot = -5;
 				player->AddMp(-5);
 			}
 			i++;
@@ -147,8 +148,33 @@ void Bullet::HomingShot(VECTOR start, VECTOR target, Player* player)
 				bullet[i] = 2;
 				isGraze[i] = 0;
 				Calculator(i, start, target);
-				isShot = 0;
+				isShot = -5;
 				player->AddMp(-5);
+			}
+			i++;
+			if (i == BULLET - 1)
+			{
+				i = 0;
+			}
+		}
+	}
+}
+
+void Bullet::SuperShot(VECTOR start, VECTOR target, Player* player)
+{
+	if (player->GetMp()>20)
+	{
+		if (key & PAD_INPUT_3)
+		{
+			if (bullet[i] == 0)
+			{
+				//使用されていないバレット配列のフラグをたてていく
+				bullet[i] = 3;
+				isGraze[i] = 0;
+				Calculator(i, start, target);
+				move[i] = VScale(move[i], 1.5f);
+				isShot = -15;
+				player->AddMp(-20);
 			}
 			i++;
 			if (i == BULLET - 1)
@@ -171,7 +197,7 @@ void Bullet::NormalShot(VECTOR start, VECTOR target, Enemy* enemy)
 				bullet[i] = 1;
 				isGraze[i] = 0;
 				Calculator(i, start, target);
-				isShot = 0;
+				isShot = -5;
 				enemy->AddMp(-5);
 			}
 			i++;
@@ -195,8 +221,33 @@ void Bullet::HomingShot(VECTOR start, VECTOR target, Enemy* enemy)
 				bullet[i] = 2;
 				isGraze[i] = 0;
 				Calculator(i, start, target);
-				isShot = 0;
+				isShot = -5;
 				enemy->AddMp(-10);
+			}
+			i++;
+			if (i == BULLET - 1)
+			{
+				i = 0;
+			}
+		}
+	}
+}
+
+void Bullet::SuperShot(VECTOR start, VECTOR target, Enemy* enemy)
+{
+	if (enemy->GetMp()>20)
+	{
+		if (enFlag==3)
+		{
+			if (bullet[i] == 0)
+			{
+				//使用されていないバレット配列のフラグをたてていく
+				bullet[i] = 3;
+				isGraze[i] = 0;
+				Calculator(i, start, target);
+				move[i] = VScale(move[i], 1.5f);
+				isShot = -15;
+				enemy->AddMp(-20);
 			}
 			i++;
 			if (i == BULLET - 1)
@@ -211,18 +262,33 @@ void Bullet::Collision(Character* character)
 {
 	for (l = 0; l < BULLET; l++)
 	{
-		if (bullet[l] == 1 | bullet[l] == 2)
+		if (bullet[l] == 1 | bullet[l] == 2 | bullet[l] == 3)
 		{
 			colVector = VSub(VGet(character->vector.x, character->vector.y + 40.0f, character->vector.z), bulletLocation[l]);
 			distVector = colVector.x * colVector.x + colVector.y * colVector.y + colVector.z * colVector.z;
 			if (isGraze[l] == 0 & distVector  < 250)
 			{
-				character->AddMp(5);
+				if (bullet[l] == 1 | bullet[l] == 2)
+				{
+					character->AddMp(5);
+				}
+				if (bullet[l] == 3)
+				{
+					character->AddMp(15);
+				}
 			}
 			if (distVector < 20)
 			{
-				bullet[l] = 0;
-				character->AddHp(-10);
+				if (bullet[l] == 1 | bullet[l] == 2)
+				{
+					bullet[l] = 0;
+					character->AddHp(-10);
+				}
+				if (bullet[l] == 3)
+				{
+					bullet[l] = 0;
+					character->AddHp(-30);
+				}
 			}
 		}
 	}
