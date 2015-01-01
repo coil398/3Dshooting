@@ -1,11 +1,8 @@
 #pragma once
 #include <dxlib.h>
-#include "Player.h"
-#include "Enemy.h"
-#include "Character.h"
-#include "Bullet.h"
-#include <math.h>
 #define BULLET 100 //弾の限界数
+
+class Character;
 
 //もしかしたらインデクサ使ったほうがいいかもしれない？
 class Bullet
@@ -30,12 +27,10 @@ public:
 	int bulletImage[5];
 	Bullet();
 	~Bullet();
-	void Shot(VECTOR start, VECTOR target);
+	void Shot(VECTOR start, VECTOR target,Character* character);
 	void Calculator(int i, VECTOR start, VECTOR target);
 	void Draw();
 	void ShotController(VECTOR start, VECTOR target);
 	int IsShot();
-	void Collision(Player* player);
-	void Collision(Enemy* enemy);
 };
 

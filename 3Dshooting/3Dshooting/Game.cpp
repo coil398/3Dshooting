@@ -59,10 +59,10 @@ void Game::Run()
 	enemy->MotionHandler(player->vector, enemy, enemy->GetBulletObj()->IsShot());
 
 	//プレイヤー弾の処理Todo
-	player->GetBulletObj()->Shot(player->vector, enemy->vector);
+	player->GetBulletObj()->Shot(player->vector, enemy->vector, player);
 
 	//エネミー弾の処理Todo
-	enemy->GetBulletObj()->Shot(player->vector, enemy->vector);
+	enemy->GetBulletObj()->Shot(player->vector, enemy->vector,enemy);
 
 	//カメラの位置更新
 	camera->Move(player->vector, enemy->vector);

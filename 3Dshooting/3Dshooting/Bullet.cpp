@@ -1,4 +1,5 @@
 #include "Bullet.h"
+#include "Character.h"
 
 Bullet::Bullet()
 {
@@ -47,7 +48,7 @@ int Bullet::IsShot()
 	return isShot;
 }
 
-void Bullet::Shot(VECTOR start, VECTOR target)
+void Bullet::Shot(VECTOR start, VECTOR target,Character* character)
 {
 	isShot++;
 
@@ -66,6 +67,7 @@ void Bullet::Shot(VECTOR start, VECTOR target)
 				isGraze[i] = 0;
 				Calculator(i, start, target);
 				isShot = 0;
+				character->AddMp(-2);
 			}
 			i++;
 			if (i == BULLET - 1)
@@ -90,52 +92,3 @@ void Bullet::Calculator(int i,VECTOR start,VECTOR target)
 	move[i] = VGet(bulletSpeed*direction[i].x, bulletSpeed*direction[i].y, bulletSpeed*direction[i].z);
 }
 
-void Bullet::Collision(Player* player)
-{
-	for (l = 0; l < BULLET; l++)
-	{
-		colVector = VSub(player->vector, bulletLocation[l]);
-		distVector = colVector.x * colVector.x + colVector.y * colVector.y + colVector.z * colVector.z;
-		if (isCol[l] == 0)
-		{
-			if (distVector < 100.0f)
-			{
-				isCol[l] = 1;
-				player->AddHp(-10);
-			}
-			else if (isGraze[l] == 0)
-			{
-				if (distVector < 250.0f)
-				{
-					isGraze[l] = 1;
-					player->AddMp(10);
-				}
-			}
-		}
-	}
-}
-
-void Bullet::Collision(Enemy* enemy)
-{
-	for (l = 0; l < BULLET; l++)
-	{
-		colVector = VSub(enemy->vector, bulletLocation[l]);
-		distVector = colVector.x * colVector.x + colVector.y * colVector.y + colVector.z * colVector.z;
-		if (isCol[l] == 0)
-		{
-			if (distVector < 100.0f)
-			{
-				isCol[l] = 1;
-				enemy->AddHp(-10);
-			}
-			else if (isGraze[l] == 0)
-			{
-				if (distVector < 250.0f)
-				{
-					isGraze[l] = 1;
-					enemy->AddMp(10);
-				}
-			}
-		}
-	}
-}
