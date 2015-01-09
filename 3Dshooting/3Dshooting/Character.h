@@ -21,7 +21,7 @@ protected:
 	int attachIndex; //モーションデータ
 	float totalTime; //再生時間
 	int motionNumber; //再生しているモーションの番号
-	float time;
+	float motiontime;
 	float colorCode;
 	VECTOR colVector; //当たり判定用のベクトル
 public:

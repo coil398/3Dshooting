@@ -9,10 +9,10 @@ private:
 	int EnemyMaterialNum; //モデルのマテリアルデータ格納
 	int key; //押したキー情報
 	float dotWidth;
-	float time;
 	int hpGaugeHandle;
 	float hpRatio;
 	Bullet* enBullet;
+	int randNumber;
 public:
 	Enemy(float x, float y, float z,int hp,int mp);
 	~Enemy();
@@ -21,5 +21,6 @@ public:
 	void Move(VECTOR playerVector, Enemy* enemy, int isShot);
 	//int GetModelHandle()override;
 	Bullet* GetBulletObj()override;
+	void Random();
 };
 

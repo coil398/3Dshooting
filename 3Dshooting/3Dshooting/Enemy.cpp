@@ -2,6 +2,8 @@
 #include <DxLib.h>
 #include "CheckKeyh.h"
 #include <math.h>
+#include <stdio.h>
+#include <time.h>
 #include "Game.h"
 
 
@@ -28,6 +30,8 @@ Enemy::Enemy(float x, float y, float z,int hp,int mp) :Character(x, y, z,hp,mp)
 		dotWidth = MV1GetMaterialOutLineDotWidth(EnemyModelHandle, i);
 		MV1SetMaterialOutLineDotWidth(EnemyModelHandle, i, dotWidth / 10.0f);
 	}
+
+	srand((unsigned int)time(NULL));
 
 	enBullet = new Bullet();
 
@@ -62,6 +66,8 @@ void Enemy::Draw()
 
 void Enemy::MotionHandler(VECTOR playerVector, Enemy* enemy,int isShot)
 {
+	Random();
+
 	Move(playerVector, enemy, isShot);
 
 	if (counter % 10 == 0)
@@ -73,10 +79,15 @@ void Enemy::MotionHandler(VECTOR playerVector, Enemy* enemy,int isShot)
 	}
 
 	//アニメーション処理
-	MV1SetAttachAnimTime(EnemyModelHandle, attachIndex, time);
+	MV1SetAttachAnimTime(EnemyModelHandle, attachIndex, motiontime);
 }
 
 Bullet* Enemy::GetBulletObj()
 {
 	return enBullet;
+}
+
+void Enemy::Random()
+{
+	
 }

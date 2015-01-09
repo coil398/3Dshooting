@@ -2,6 +2,8 @@
 #include "Character.h"
 #include "Player.h"
 #include "Game.h"
+#include <stdio.h>
+#include <time.h>
 
 Bullet::Bullet()
 {
