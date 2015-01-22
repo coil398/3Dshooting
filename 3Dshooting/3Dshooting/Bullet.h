@@ -30,7 +30,7 @@ public:
 	Bullet();
 	~Bullet();
 	void Shot(VECTOR start, VECTOR target,Player* character);
-	void Shot(VECTOR start, VECTOR target, Enemy* character);
+	void Shot(VECTOR start, VECTOR target, Enemy* character,int randNumber);
 	void Calculator(int i, VECTOR start, VECTOR target);
 	void Draw();
 	void ShotController(VECTOR start, VECTOR target);

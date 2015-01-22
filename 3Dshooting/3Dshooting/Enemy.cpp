@@ -36,6 +36,8 @@ Enemy::Enemy(float x, float y, float z,int hp,int mp) :Character(x, y, z,hp,mp)
 	enBullet = new Bullet();
 
 	hpRatio = hp;
+
+	moveFlag = 0;
 }
 
 
@@ -53,6 +55,90 @@ void Enemy::Move(VECTOR playerVector,Enemy* enemy,int isShot)
 
 	//3Dƒ‚ƒfƒ‹‚ÌˆÚ“®
 	MV1SetPosition(EnemyModelHandle, enemy->vector);
+
+	if (isShot > 30)
+	{
+		if (moveNumber > 0)
+		{
+			moveNumber--;
+			if (moveFlag == 1)
+			{
+				if (vector.y > 30)
+				{
+					vector.y -= 5.0f;
+				}
+			}
+
+			if (moveFlag == 2)
+			{
+				if (vector.y < 200)
+				{
+					vector.y += 5.0f;
+				}
+			}
+
+			if (moveFlag == 3)
+			{
+				if (vector.x < 300)
+				{
+					vector.x += 5.0f;
+				}
+			}
+
+			if (moveFlag == 4)
+			{
+				if (vector.x > -120)
+				{
+					vector.x -= 5.0f;
+				}
+			}
+		}
+		else
+		{
+			if (randNumber == 0 | randNumber == 4 | randNumber == 8)
+			{
+				if (vector.y > 30)
+				{
+					vector.y -= 5.0f;
+					moveFlag = 1;
+					moveNumber = 15;
+				}
+				
+			}
+
+			if (randNumber == 1 | randNumber == 5 | randNumber == 9)
+			{
+				if (vector.y < 200)
+				{
+					vector.y += 5.0f;
+					moveFlag = 2;
+					moveNumber = 15;
+				}
+				
+			}
+
+			if (randNumber == 2 | randNumber == 6 | randNumber == 10)
+			{
+				if (vector.x < 300)
+				{
+					vector.x += 5.0f;
+					moveFlag = 3;
+					moveNumber = 15;
+				}
+			}
+
+			if (randNumber == 3 || randNumber == 7 | randNumber == 11)
+			{
+				if (vector.x > -120)
+				{
+					vector.x -= 5.0f;
+					moveFlag = 4;
+					moveNumber = 15;
+
+				}
+			}
+		}
+	}
 }
 
 void Enemy::Draw()
@@ -66,7 +152,7 @@ void Enemy::Draw()
 
 void Enemy::MotionHandler(VECTOR playerVector, Enemy* enemy,int isShot)
 {
-	Random();
+	randNumber = rand() % 32;
 
 	Move(playerVector, enemy, isShot);
 
@@ -87,7 +173,7 @@ Bullet* Enemy::GetBulletObj()
 	return enBullet;
 }
 
-void Enemy::Random()
+int Enemy::GetRandom()
 {
-	
+	return randNumber;
 }

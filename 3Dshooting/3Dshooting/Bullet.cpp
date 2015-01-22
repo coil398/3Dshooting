@@ -87,9 +87,25 @@ void Bullet::Shot(VECTOR start, VECTOR target,Player* player)
 
 }
 
-void Bullet::Shot(VECTOR start, VECTOR target, Enemy* enemy)
+void Bullet::Shot(VECTOR start, VECTOR target, Enemy* enemy,int randNumber)
 {
-	enFlag = 3;
+	isShot++;
+
+	if (randNumber > 25)
+	{
+		enFlag = 1;
+	}
+
+	if (randNumber > 28)
+	{
+		enFlag = 2;
+	}
+
+	if (randNumber > 30)
+	{
+		enFlag = 3;
+	}
+
 	if (counter % 10 == 0)
 	{
 		NormalShot(start, target,enemy);

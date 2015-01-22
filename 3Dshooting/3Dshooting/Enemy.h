@@ -13,6 +13,8 @@ private:
 	float hpRatio;
 	Bullet* enBullet;
 	int randNumber;
+	int moveFlag;
+	int moveNumber;
 public:
 	Enemy(float x, float y, float z,int hp,int mp);
 	~Enemy();
@@ -22,5 +24,6 @@ public:
 	//int GetModelHandle()override;
 	Bullet* GetBulletObj()override;
 	void Random();
+	int GetRandom();
 };
 

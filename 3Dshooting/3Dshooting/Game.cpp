@@ -15,7 +15,7 @@ Game::Game()
 	//プレイヤー作成xyzHP
 	player = new Player(0.0f, 50.0f, 0.0f, 100, 100);
 	//エネミー作成xyzHP
-	enemy = new Enemy(0.0f, 50.0f, -200.0f, 500, 500);
+	enemy = new Enemy(0.0f, 50.0f, -200.0f, 500, 100);
 	//ステージのオブジェクト
 	stage = new BackGround();
 	//弾オブジェクト
@@ -63,7 +63,7 @@ void Game::Run()
 	player->GetBulletObj()->Collision(enemy);
 
 	//エネミー弾の処理Todo
-	enemy->GetBulletObj()->Shot(VGet(enemy->vector.x, enemy->vector.y + 40.0f, enemy->vector.z),VGet(player->vector.x, player->vector.y + 40.0f, player->vector.z), enemy);
+	enemy->GetBulletObj()->Shot(VGet(enemy->vector.x, enemy->vector.y + 40.0f, enemy->vector.z),VGet(player->vector.x, player->vector.y + 40.0f, player->vector.z), enemy,enemy->GetRandom());
 	enemy->GetBulletObj()->Collision(player);
 
 	//カメラの位置更新
@@ -93,6 +93,6 @@ void Game::Run()
 
 	if (player->GetHp() < 0 | enemy->GetHp() < 0)
 	{
-		return;
+		exit;
 	}
 }
